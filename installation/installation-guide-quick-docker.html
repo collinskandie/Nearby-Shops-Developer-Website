@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-92673120-3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-92673120-3');
+    </script>
+
+
+    <!-- Title -->
+  <title>Nearby Shops | Developer : Quick Installation Guide</title>
+
+  <!-- Required Meta Tags Always Come First -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="favicon.ico">
+
+  <!-- Google Fonts -->
+  <link href="//fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+
+  <!-- CSS Implementing Plugins -->
+  <link rel="stylesheet" href="/assets/vendor/font-awesome/css/fontawesome-all.min.css">
+  <link rel="stylesheet" href="/assets/vendor/animate.css/animate.min.css">
+  <link rel="stylesheet" href="/assets/vendor/hs-megamenu/src/hs.megamenu.css">
+  <link rel="stylesheet" href="/assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css">
+  <link rel="stylesheet" href="/assets/vendor/cubeportfolio/css/cubeportfolio.min.css">
+
+
+  <link rel="stylesheet" href="/assets/vendor/jquery-ui/themes/base/jquery-ui.min.css">
+  <link rel="stylesheet" href="/assets/vendor/prism/prism.css">
+
+
+
+  <!-- CSS Front Template -->
+  <link rel="stylesheet" href="/assets/css/theme.css">
+
+  <link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css"/>
+
+
+
+  <!-- CSS Front Doc -->
+  <link rel="stylesheet" href="/assets/css/starter.css">
+
+
+  <style>
+
+    p{
+      color: #0a0a0a;
+      font-family:Helvetica Neue, Helvetica, Arial, sans-serif;
+    }
+
+
+    /*font-family: "Helvetica Neue", Arial, sans-serif;*/
+
+    h2{
+      color: orange;
+      font-weight: normal;
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+
+    h3{
+      color: green;
+      font-weight: lighter;
+      font-size: larger;
+    }
+
+
+
+  </style>
+
+
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+
+
+  <div id="header"></div>
+
+
+  <!-- ========== MAIN ========== -->
+  <main id="content" role="main">
+    <!-- Search Section -->
+    <div class="gradient-half-primary-v1">
+      <div class="bg-img-hero-center" style="background-image: url(/assets/svg/components/bg-elements-10.svg);">
+        <div class="container space-1">
+          <div class="d-inline-block">
+            <a href="installation-guide-quick-docker.html" data-toc-skip class="h5 text-white">Installation</a>
+            <a data-toc-skip class="h5 text-white font-size-2 font-weight-light ml-2 mr-2">/</a>
+            <a href="installation-guide-quick-docker.html" data-toc-skip class="h5 text-white font-weight-normal">Quick Installation Guide</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Search Section -->
+
+
+    <div class="container-fluid pl-3 pr-3">
+      <div class="row">
+
+        <div class="col-lg-3 col-12 pl-5 text-center d-inline-block">
+          <div id="table-of-contents" class="sticky-top"></div>
+        </div>
+
+
+      <!-- main content area -->
+      <div class="col-lg-6">
+
+
+          <!-- Article Section -->
+          <div class="space-bottom-2">
+            <div class="">
+
+              <!-- Article -->
+              <div class="card shadow-sm p-lg-7 p-4">
+                <h2 >Quick Installation Using Docker</h2>
+                <p class="font-size-2">
+                </p>
+
+
+
+                <h3>Prerequisite Knowledge</h3>
+                <p>
+                  This installation guide is simple enough.
+                  Even if you have just the basic knowledge of how to browse web and use computers that is sufficient. 
+                  There are things which you may need to learn but you can learn them easily. 
+                </p>
+
+                  
+                <p>
+                  If you dont know anything about docker and cloud hosting dont worry. Just follow our stepwise procedure and you will get through. 
+                </p>
+
+
+                <p>
+                  If you are completely new to Cloud hosting then you can learn it in just few minutes with these simple tutorials.
+                </br></br>
+                  <a href="https://www.digitalocean.com/docs/droplets/how-to/create/">https://www.digitalocean.com/docs/droplets/how-to/create/</a>
+
+                </br>
+                  <a href="https://www.digitalocean.com/docs/droplets/how-to/connect-with-ssh/">https://www.digitalocean.com/docs/droplets/how-to/connect-with-ssh/</a>
+                  
+                </p>
+
+
+
+                <p>
+                  We assume some familiarity with Ubuntu terminal commands and cloud hosting. If you completely new to this
+                  you can follow tutorials like these
+                </p>
+
+
+                <p>
+                  <a href="http://www.linuxandubuntu.com/home/10-basic-linux-commands-that-every-linux-newbies-should-remember">
+                    http://www.linuxandubuntu.com/home/10-basic-linux-commands-that-every-linux-newbies-should-remember</a>
+                </p>
+
+
+          
+
+                
+                <h3 >Steps for Installation</h3>
+
+                <p>Step 1: Install docker and docker compose</br>
+                  Step 2: Download Docker file and run it</br>
+                  Step 3 : Assign a Domain name</br>
+                  Step 4 : Enter container and update instance configuration</br>
+                  Step 5 : Publish your app on Google Play (Optional)</br>
+                  Step 6 : Submit your market to Nearby Shops (Optional)</br>
+                  Step 7 : Login as admin and update Market Configuration
+                </p>
+
+                
+
+
+
+                <p  class="border-top space-1">
+                  For simplicity and ease of Installation we recommend Digital Ocean. To keep things simple you can create a new Droplet 
+                  using One Click Docker Image given here 
+                
+                  <a href="https://marketplace.digitalocean.com/apps/docker">https://marketplace.digitalocean.com/apps/docker</a> 
+                
+                  This image comes with Docker preinstalled. 
+                </p>
+
+
+                <p> Please Note : 
+                  We recommend Digital Ocean for simplicity but you can use any other cloud hosting platform. 
+                  We are assuming that you are installing on a ubuntu based cloud server with an IP address & internet access. 
+                </p>
+
+
+
+                <h2 >Step 1: Install docker and docker compose</h2>
+
+                <p>If you already have docker preinstalled then you can skip this step.</p>
+              
+                <p>
+                  If you dont have latest version of docker and docker compose please install them using the following official installation guides.
+                  <br><br>
+Install the latest version of docker using this link <a href="https://docs.docker.com/install/linux/docker-ce/ubuntu/">https://docs.docker.com/install/linux/docker-ce/ubuntu/</a>
+<br>
+Install the latest version of docker Compose using this link <a href="https://docs.docker.com/compose/install/">https://docs.docker.com/compose/install/</a>
+                </p>
+
+
+
+
+                <h2>Step 2: Download Docker Compose file and run it</h2>
+
+
+                <p>Download the docker compose file and run it.</p>
+
+
+                <pre class="card bg-light align-content-start">
+                  <span class="fas fa-code p-3">   Commands</span>
+                  <code class="border-top">
+    cd ~
+    mkdir nearbyshops
+    cd nearbyshops
+
+    wget https://raw.githubusercontent.com/NearbyShops/Nearby-Shops-API/master/docker-compose.yml
+
+    docker-compose up
+
+    (Exit container using Ctrl + C or Ctrl + Z  ... If nothing works close the terminal window & start a new terminal)
+      </code>
+                </pre>
+
+
+
+
+
+
+                <p>This is optional. You can also edit the docker-compose.yml file and change the settings like port number, container name to suit your needs.</p>
+
+
+                <pre class="card bg-light align-content-start">
+                  <span class="fas fa-code p-3">  Optional Commands</span>
+                  <code class="border-top">
+    sudo nano docker-compose.yml
+                </code>
+                </pre>
+
+
+                <p>
+                  <span class="fas fa-arrow-right"> Verify Successful Execution</span> : In order to verify and test that we have a successful connection to the Api Server.
+                  We will test the endpoints to see if we get any result. 
+
+                </p>
+                  
+                <p>
+                  Before testing the endpoints please ensure that your container is running. 
+                </p>
+
+
+                
+                <pre class="card bg-light align-content-start">
+                  <span class="fas fa-code p-3">  Terminal Commands</span>
+                  <code class="border-top">
+
+    docker-compose start
+    (please ensure that you are inside the directory where docker-compose.yml resides)
+
+    OR 
+
+    docker start nbs_api_container     
+                </code>
+                </pre>
+
+                  
+               
+                  
+                <p>
+                  The url for the endpoint is
+                  <br>
+                  <span class="text-indigo font-weight-bold"> [IP:port]/api/ServiceConfiguration</span>
+                  <br>
+                  Replace the IP and port number according to your installation. For example if your IP address is <b>139.59.81.21</b> and port number is <b>80</b>
+
+                  you can type some like <span class="text-indigo font-weight-bold"> 139.59.81.21/api/ServiceConfiguration</span> in URL of Firefox browser.
+
+                  When you execute this url in your firefox browser you should see some text json output.
+                  <br>
+                  Having the output verifies successful execution.
+              </p>
+
+
+                
+
+                <h2>Step 3 : Assign a Domain name</h2>
+
+
+                <p>IP addresses can change and are not stable. For stable and long term access to your instance it is always a good idea to assign a domain name to your server. 
+                  Based on the hosting provider you are using you have to follow their respective methods.
+
+                </p>
+
+                <p>
+                  If you are completely new to clould hosting and dont know how to assign a domain name. Then follow these tutorials
+                  <a href="https://www.youtube.com/watch?v=7itQ-AXiM5o">https://www.youtube.com/watch?v=7itQ-AXiM5o</a>
+                </br></br>
+                  <a href="https://www.digitalocean.com/community/tutorials/how-to-point-to-digitalocean-nameservers-from-common-domain-registrars">https://www.digitalocean.com/community/tutorials/how-to-point-to-digitalocean-nameservers-from-common-domain-registrars</a>
+                </p>
+
+
+
+                <h2>Step 4 : Enter container and update instance configuration</h2>
+
+
+                <p>
+                  You need to change few api configuration settings like domain name & admin email to ensure that you are able to 
+                  access your market Instance.
+                  <br><br>
+                  Enter your container and update api configuration.
+                </p>
+                
+
+
+                <pre class="card bg-light align-content-start">
+                  <span class="fas fa-code p-3">   Commands</span>
+                  <code class="border-top">
+
+    docker-compose start
+    (please ensure that you are inside the directory where docker-compose.yml resides)
+
+    OR 
+
+    docker start nbs_api_container 
+    
+
+
+    docker exec -it nbs_api_container bash
+
+    cd ~/nearbyshops/data 
+    
+    sudo nano api_config.properties
+
+    (Save and Exit using Ctrl + X)
+    (Exit container using Ctrl + C or Ctrl + D)
+                </code>
+                </pre>
+
+
+
+                <h4>Things to Update</h4>
+                <li>Admin Email</li>
+                <li>Domain Name</li>
+                <li>Market ID for FCM</li>
+
+
+                <p class="mt-3">
+                  <b>admin_email</b>
+                   is the field name. Admin email is the email of the market admin. 
+                   Without providing this you wont be able to access your market and change settings.</p>
+
+                <p>
+                  <b>domain_name</b>
+                  is the field name and you need to set this equal to your domain name
+                </p>
+                
+                <p>
+                  <b>market_id_for_fcm</b>
+                  is the field name. It should be some unique id that uniquely identifies your market. It is used to enable push notifications.
+                </p>
+
+
+
+
+                <p>
+                  <b>Setup Email and SMS (Can be skipped and Done later also)</b>
+              
+                    Email and SMS are required for sending live order status updates to the customers. They are also used for login purposes. 
+                    The Email and SMS setup instructions are provided in our <a href="../integrations/e-mail-integration.html">Integrations guide.</a>
+                  </br></br>
+                    You can skip Email and SMS setup and do this later also. 
+                </p>
+
+
+                <p>Everytime you make a change in the configuration file you need to restart the server in order to ensure that changes are 
+                  reflected.
+                </p>
+
+
+                <pre class="card bg-light align-content-start">
+                  <span class="fas fa-code p-3">  Commands : Restart Container</span>
+                  <code class="border-top">
+
+    docker-compose restart
+    (please ensure that you are inside the directory where docker-compose.yml resides)
+
+    OR
+  
+    docker stop nbs_api_container
+
+    docker start nbs_api_container
+
+                </code>
+                </pre>
+
+
+
+
+
+
+
+                <h2>Step 5 : Publish your app on Google Play (Optional)</h2>
+
+         
+                <p>You can customize our android app (White Label Solution) and connect the app to your Instance and publish to the Google Play. This is optional and isnt 
+                  mandatory. 
+                  <br><br>
+                  More information about how to customize your app and publish on Google Play is given in the article 
+                  
+                  <a href="./customize-apps.html">Customize apps.</a>
+                </p>
+
+
+
+
+
+
+
+                
+                <!-- Your market gets free access to all the customers of nearby shops app.   -->
+
+                <!-- Nearby Shops is not just open-source but also Nonprofit. Its free and there is no need to pay any commission and Marketing fee.  -->
+                <!-- <br><br> -->
+                <!-- When you link / submit your market to nearby shops. Your market gets free access to all the customers of nearby shops app.  -->
+                <!-- <br><br> -->
+
+                <!-- Nearby Shops is free and open-source platform. There is no need to pay any commission and Marketing fee. 
+                  When you link / submit your market to nearby shops. Your market gets free access to all the customers of nearby shops app.
+                  <br><br>
+                  Download Nearby Shops android app from Google Play. Here you will find a + (plus) button on the markets screen. 
+                  Enter your market url (domain name) and make a submission. 
+                  <br><br>
+                  Please change your location to Bali, Indonesia. 
+                  Your newly setup market name could be Daily Supplies in Bali, Indonesia. In the next step we will see 
+                  how can you change the market name and other settings. -->
+
+
+
+                  <h2>Step 6 : Link your market to Local Market Aggregators (Optional)</h2>
+
+                <p>
+                  This is optional and isnt mandatory. 
+                  <br><br>
+                  You can link your website to Google and Bing to gain extra traffic for your website. Similarly 
+                  you can link your market to various local market Aggregators and gain free access
+                  to more customers. 
+                  <br><br>
+                  For linking your Market to Nearby Shops there is no Commission and Marketing fee. You can link to other 
+                  Local Market Aggregators also. 
+                  <br><br>
+                  You can also convert your app into a Local Market Aggregator if you run your app in the multi-market Mode. 
+                </p>
+
+
+
+                <h2>Step 7 : Login as admin and update Market Configuration</h2>
+
+
+                <p>Remember the email that you assigned as admin email in the configuration file. You will use this email 
+                  to login to the nearby shops app or your own custom app. 
+
+                  <br><br> In case you dont have your own custom app. 
+                  Download Nearby Shops android app from Google Play and Please change your location to Bali, Indonesia. 
+                  Your newly setup market name could be Daily Supplies in Bali, Indonesia. 
+
+                  <br><br>
+                  After login please select your market and you should be able to see Admin Dashboard in Markets screen. 
+                  In case of your custom app you will see admin dashboard in the profile screen. 
+                  In your admin dashboard you will see Market Configuration. Enter that screen. Set all the fields appropriately & save the settings.
+                </p>
+
+                
+
+                <h2>Follow our tutorials to Learn more !</h2>
+
+
+                <p>To learn more about how to add vendors and use nearby shops. Please follow our tutorials given at this link 
+                  <a href="https://blog.nearbyshops.org/tag/tutorials/">https://blog.nearbyshops.org/tag/tutorials/</a>
+                </p>
+
+
+
+
+
+                  <p class="border-top space-top-2 font-size-2 font-weight-light">
+                      Facing difficulty in understanding anything ? ... let us help you !
+                      If you have any questions and queries do not hesitate to get in touch with us on our
+                      <a href="http://forum.nearbyshops.org">forum</a>
+                  </p>
+
+
+              </div>
+              <!-- End Article -->
+
+
+
+            </div>
+          </div>
+          <!-- End Article Section -->
+
+      </div>
+
+
+
+        <!-- sidebar, which will move to the top on a small screen -->
+        <div class="col-lg-3">
+
+          <nav id="toc" data-toggle="toc" class="sticky-top space-2 font-size-5">
+            <p class="font-weight-light ml-3 text-primary font-size-2">On this page</p>
+          </nav>
+        </div>
+
+
+      </div>
+    </div>
+  </main>
+  <!-- ========== END MAIN ========== -->
+
+
+
+
+  <div id="footer"></div>
+
+
+
+  <!-- Go to Top -->
+  <a class="js-go-to u-go-to" href="#"
+    data-position='{"bottom": 15, "right": 15 }'
+    data-type="fixed"
+    data-offset-top="400"
+    data-compensation="#header"
+    data-show-effect="slideInUp"
+    data-hide-effect="slideOutDown">
+    <span class="fas fa-arrow-up u-go-to__inner"></span>
+  </a>
+  <!-- End Go to Top -->
+
+  <!-- JS Global Compulsory -->
+  <script src="/assets/vendor/jquery/dist/jquery.min.js"></script>
+  <script src="/assets/vendor/jquery-migrate/dist/jquery-migrate.min.js"></script>
+  <script src="/assets/vendor/popper.js/dist/umd/popper.min.js"></script>
+  <script src="/assets/vendor/bootstrap/bootstrap.min.js"></script>
+
+  <!-- add after bootstrap.min.js -->
+  <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+
+
+
+  <!-- JS Implementing Plugins -->
+  <script src="/assets/vendor/hs-megamenu/src/hs.megamenu.js"></script>
+  <script src="/assets/vendor/svg-injector/dist/svg-injector.min.js"></script>
+  <script src="/assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="/assets/vendor/jquery-validation/dist/jquery.validate.min.js"></script>
+
+  <!-- JS Front -->
+  <script src="/assets/js/hs.core.js"></script>
+  <script src="/assets/js/components/hs.header.js"></script>
+  <script src="/assets/js/components/hs.unfold.js"></script>
+  <script src="/assets/js/components/hs.malihu-scrollbar.js"></script>
+  <script src="/assets/js/components/hs.validation.js"></script>
+  <script src="/assets/js/components/hs.focus-state.js"></script>
+  <script src="/assets/js/components/hs.show-animation.js"></script>
+  <script src="/assets/js/components/hs.svg-injector.js"></script>
+  <script src="/assets/js/components/hs.go-to.js"></script>
+
+  <!-- JS Plugins Init. -->
+  <script>
+
+
+    $(function(){
+        $("#header").load("../header.html");
+        $("#footer").load("../footer.html");
+
+
+      $("#table-of-contents").load("table-of-contents-installation.html");
+
+    });
+
+
+    $(window).on('load', function () {
+      // initialization of HSMegaMenu component
+      $('.js-mega-menu').HSMegaMenu({
+        event: 'hover',
+        pageContainer: $('.container'),
+        breakpoint: 767.98,
+        hideTimeOut: 0
+      });
+
+      // initialization of svg injector module
+      $.HSCore.components.HSSVGIngector.init('.js-svg-injector');
+    });
+
+    $(document).on('ready', function () {
+      // initialization of header
+      $.HSCore.components.HSHeader.init($('#header'));
+
+      // initialization of unfold component
+      $.HSCore.components.HSUnfold.init($('[data-unfold-target]'), {
+        afterOpen: function () {
+          $(this).find('input[type="search"]').focus();
+        }
+      });
+
+      // initialization of malihu scrollbar
+      $.HSCore.components.HSMalihuScrollBar.init($('.js-scrollbar'));
+
+      // initialization of show animations
+      $.HSCore.components.HSShowAnimation.init('.js-animation-link');
+
+      // initialization of form validation
+      $.HSCore.components.HSValidation.init('.js-validate', {
+        rules: {
+          confirmPassword: {
+            equalTo: '#signupPassword'
+          }
+        }
+      });
+
+      // initialization of forms
+      $.HSCore.components.HSFocusState.init();
+
+      // initialization of go to
+      $.HSCore.components.HSGoTo.init('.js-go-to');
+    });
+  </script>
+</body>
+</html>

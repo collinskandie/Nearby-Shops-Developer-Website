@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-92673120-3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-92673120-3');
+    </script>
+
+
+    <!-- Title -->
+  <title>Nearby Shops | Developer : Configure SystemD</title>
+
+  <!-- Required Meta Tags Always Come First -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="favicon.ico">
+
+  <!-- Google Fonts -->
+  <link href="//fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+
+  <!-- CSS Implementing Plugins -->
+  <link rel="stylesheet" href="../assets/vendor/font-awesome/css/fontawesome-all.min.css">
+  <link rel="stylesheet" href="../assets/vendor/animate.css/animate.min.css">
+  <link rel="stylesheet" href="../assets/vendor/hs-megamenu/src/hs.megamenu.css">
+  <link rel="stylesheet" href="../assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css">
+  <link rel="stylesheet" href="../assets/vendor/cubeportfolio/css/cubeportfolio.min.css">
+
+
+  <link rel="stylesheet" href="../assets/vendor/jquery-ui/themes/base/jquery-ui.min.css">
+  <link rel="stylesheet" href="../assets/vendor/prism/prism.css">
+
+
+
+  <!-- CSS Front Template -->
+  <link rel="stylesheet" href="../assets/css/theme.css">
+
+  <link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css"/>
+
+
+
+  <!-- CSS Front Doc -->
+  <link rel="stylesheet" href="../assets/css/starter.css">
+
+
+  <style>
+
+    p{
+      color: #0a0a0a;
+      font-family:Helvetica Neue, Helvetica, Arial, sans-serif;
+    }
+
+
+    /*font-family: "Helvetica Neue", Arial, sans-serif;*/
+
+    h2{
+      color: orange;
+      font-weight: normal;
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+
+    h3{
+      color: green;
+      font-weight: lighter;
+      font-size: larger;
+    }
+
+
+
+  </style>
+
+
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+
+
+  <div id="header"></div>
+
+
+  <!-- ========== MAIN ========== -->
+  <main id="content" role="main">
+    <!-- Search Section -->
+    <div class="gradient-half-primary-v1">
+      <div class="bg-img-hero-center" style="background-image: url(../assets/svg/components/bg-elements-10.svg);">
+        <div class="container space-1">
+          <div class="d-inline-block">
+            <a href="installation-guide.html" data-toc-skip class="h5 text-white">Installation</a>
+            <a data-toc-skip class="h5 text-white font-size-2 font-weight-light ml-2 mr-2">/</a>
+            <a href="#" data-toc-skip class="h5 text-white font-weight-normal">Configure SystemD</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Search Section -->
+
+
+
+    <div class="container-fluid pl-3 pr-3">
+      <div class="row">
+
+        <div class="col-lg-3 col-12 pl-5 text-center d-inline-block">
+          <div id="table-of-contents" class="sticky-top"></div>
+        </div>
+
+
+      <!-- main content area -->
+      <div class="col-lg-6">
+
+
+          <!-- Article Section -->
+          <div class="space-bottom-2">
+            <div class="">
+
+              <!--&lt;!&ndash; Breadcrumbs &ndash;&gt;-->
+              <!--<nav aria-label="breadcrumb">-->
+                <!--<ol class="breadcrumb breadcrumb-no-gutter font-size-1 space-1">-->
+                  <!--<li class="breadcrumb-item"><a href="help.html">Front Help Center</a></li>-->
+                  <!--<li class="breadcrumb-item"><a href="help.html">Getting started</a></li>-->
+                  <!--<li class="breadcrumb-item active" aria-current="page">What's Front?</li>-->
+                <!--</ol>-->
+              <!--</nav>-->
+              <!--&lt;!&ndash; End Breadcrumbs &ndash;&gt;-->
+
+
+
+              <!-- Article -->
+              <div class="card shadow-sm p-lg-7 p-4">
+                <h2 >Configure SystemD for Nearby Shops</h2>
+                <p class="font-size-2">In this article we will learn how to automate the process execution using systemD.</p>
+
+                  <p>
+                      SystemD is a mechanism in the Linux OS which automates the execution of the processes.
+                      It is required to ensure that the process does not terminate unexpectedly.
+                      When there is an unexpected termination of the process the systemD restarts the process.
+                      Since our API backend is suppose to run indefinitely unless we dont stop it by self.
+                      Therefore we need this mechanism to ensure that our process runs indefinitely.
+                  </p>
+
+
+                  <p>
+                      A mechanism which monitors the running Java Process and restarts the process automatically when it is terminated unexpectedly.
+                      We also need to ensure that our process is started automatically on server restart.
+                      We can solve this problem using SystemD init system which is available in Ubuntu 16.04.
+                      </br></br>
+                      You can learn more about SystemD init system by reading the following articles
+                      </br></br>
+
+                      <a href="https://www.digitalocean.com/community/tutorials/how-to-use-systemctl-to-manage-systemd-services-and-units">
+                          https://www.digitalocean.com/community/tutorials/how-to-use-systemctl-to-manage-systemd-services-and-units
+                      </a>
+
+                      </br></br>
+
+                      <a href="https://www.digitalocean.com/community/tutorials/understanding-systemd-units-and-unit-files?utm_medium=btb_algo">
+                          https://www.digitalocean.com/community/tutorials/understanding-systemd-units-and-unit-files?utm_medium=btb_algo
+                      </a>
+
+                      </br></br>
+
+                      <a href="https://www.digitalocean.com/community/tutorials/how-to-configure-a-linux-service-to-start-automatically-after-a-crash-or-reboot-part-1-practical-examples">
+                          https://www.digitalocean.com/community/tutorials/how-to-configure-a-linux-service-to-start-automatically-after-a-crash-or-reboot-part-1-practical-examples
+                      </a>
+                  </p>
+
+
+
+
+                  <p>
+                      After reading the above articles you will understand how SystemD works and what are unit files.
+                      We will have to write a small script which manages and tells SystemD how to manage process execution for your process and
+                      configure it to automate your process execution.
+                  </p>
+
+
+
+
+                <h3 class="space-top-1">Prerequisite Knowledge</h3>
+                  <p>
+                  To understand this guide you dont need to be an expert but having some basic knowledge of linux terminal commands and java will help you.
+                  </p>
+
+
+
+                <h3 >Steps to configure SystemD</h3>
+
+                <p> 1. Navigate to /etc/systemd/system</br>
+                    2. Create a blank unit file</br>
+                    3. Add instructions in your unit file</br>
+                    4. Start the Service</br>
+                    5. Check whether the service is started</br>
+                    6. Enable the service to start automatically at Sytem Restart / Reboot</br>
+                    7. Check whether the service starts after a system Restart</br>
+                    8. Check whether service restarts at Unexpected Termination</br>
+                </p>
+
+
+
+
+                <!-- Alert -->
+                <div class="alert alert-warning p-4 mb-5 mt-5" role="alert">
+
+                  <h3><span class="fas fa-ambulance font-size-2 mt-1 mr-3"></span>Caution for Developers</h3>
+                  <p>Currently the API Authenticates using Basic Auth and Lacks TLS / SSL Security.
+                    Its not safe to run a production version of the app without the TLS encryption.
+                    When planning to run a production version please ensure you have TLS encryption before you start.</p>
+
+                </div>
+
+
+
+                <p class="border-top space-1">Let us begin the step by step guide to configure SystemD</p>
+
+
+
+
+
+                  <h2>Step 1 : Navigate to /etc/systemd/system</h2>
+
+                  <p>
+                      SystemD service unit files are located at this directory so we will cd into /etc/systemd/system
+                  </p>
+
+
+                  <pre class="card bg-light align-content-start">
+                  <span class="fas fa-code p-3">   Code</span>
+                  <code class="border-top">
+    cd /etc/systemd/system
+                    </code>
+                  </pre>
+
+
+
+                  <h2>Step 2 : Create a blank unit file</h2>
+
+                  <pre class="card bg-light align-content-start">
+                  <span class="fas fa-code p-3">   Code</span>
+                  <code class="border-top">
+    sudo touch nearbyshopsapi.service
+                    </code>
+                  </pre>
+
+
+                  <p>
+                      Type this command in your terminal.
+                      It will create a new file with name “nearbyshopsapi.service”.
+                      This is a blank file now and it does not have anything inside it.
+                      So in the next step we will open this file and add some instructions inside it.
+                  </p>
+
+
+                  <h2>Step 3 : Add instructions in your unit file</h2>
+
+                  <p>The following is an example of Sample Unit file.</p>
+
+                  <pre class="card bg-light align-content-start">
+                  <span class="fas fa-code p-3">   Sample Unit File</span>
+                  <code class="border-top">
+
+    [Unit]
+
+    Description=nearbyshops_app: Nearbyshops Java API
+
+    After=syslog.target network.target
+
+    [Service]
+
+    WorkingDirectory=/nearbyshops
+    ExecStart=/usr/lib/jvm/java-8-openjdk-amd64/bin/java -jar  /nearbyshops/nearby-shops-api.jar
+    Type=simple
+
+    Restart=always
+
+    [Install]
+
+    WantedBy=multi-user.target
+
+                    </code>
+                  </pre>
+
+
+                  <p>
+                      Copy and paste the contents of the above sample file in the new unit file we created in the previous step.
+                      </br></br>
+                      Please replace the filepath of jar file with the actual file path of your jar file.
+                      </br></br>
+                      Replace the working directory with the directory path in which your jar file exist.
+                      </br></br>
+                      Provide the full path to your java installation. This path may differ from the path given above.
+                  </p>
+
+
+
+                  <h2>Step 4 : Start the Service </h2>
+
+                  <p>
+                      Type the following command which reloads all the unit file. You need to type this command whenever you make any changes in the unit files.
+                  </p>
+
+
+                  <pre class="card bg-light align-content-start">
+                  <span class="fas fa-code p-3">   Code</span>
+                  <code class="border-top">
+    sudo sytemctl daemon-reload
+                    </code>
+                  </pre>
+
+
+                  <p>Start the service using the following command</p>
+
+
+                  <pre class="card bg-light align-content-start">
+                  <span class="fas fa-code p-3">   Code</span>
+                  <code class="border-top">
+    sudo systemctl start nearbyshopsapi.service
+                    </code>
+                  </pre>
+
+
+
+                  <h2>Step 5: Check whether the service is started</h2>
+
+                  <pre class="card bg-light align-content-start">
+                  <span class="fas fa-code p-3">   Code</span>
+                  <code class="border-top">
+    sudo systemctl status nearbyshopsapi.service
+                    </code>
+                  </pre>
+
+
+                  <p>this command will show you the status of the service and whether it is running or failed to run.</p>
+
+
+                  <h2>Step 6 :  Enable the service to start automatically at Sytem Restart / Reboot</h2>
+
+                  <pre class="card bg-light align-content-start">
+                  <span class="fas fa-code p-3">   Code</span>
+                  <code class="border-top">
+    sudo systemctl enable nearbyshopsapi.service
+                    </code>
+                  </pre>
+
+
+                  <p>
+                      this command will enable the service and this will allow the service to restart automatically at system reboot or just a normal start.
+                      This will start the service automatically when the system is rebooted or restarted.
+                        </br></br>
+                      you can check whether you have successfully enabled the service or not by typing the following command
+                  </p>
+
+
+                  <pre class="card bg-light align-content-start">
+                  <span class="fas fa-code p-3">   Code</span>
+                  <code class="border-top">
+    sudo systemctl is-enabled nearbyshopsapi.service
+                    </code>
+                  </pre>
+
+
+
+                  <h2>Step 7 : Check whether the service starts after a system Restart</h2>
+
+                  <p>Type the following command to restart your Ubuntu server</p>
+
+                  <pre class="card bg-light align-content-start">
+                  <span class="fas fa-code p-3">   Code</span>
+                  <code class="border-top">
+    sudo shutdown -r now
+                    </code>
+                  </pre>
+
+
+                  <p>After the server is restarted and running. You need to check the status of the service to determine whether it is running or not.</p>
+
+                  <pre class="card bg-light align-content-start">
+                  <span class="fas fa-code p-3">   Code</span>
+                  <code class="border-top">
+    sudo systemctl status nearbyshopsapi.service
+                    </code>
+                  </pre>
+
+
+
+
+                  <p>Type the above command to check the status of the service. The service should be running.</p>
+
+
+
+                  <h2>Step 8 : Check whether service restarts at Unexpected Termination</h2>
+
+
+                  <pre class="card bg-light align-content-start">
+                  <span class="fas fa-code p-3">   Code</span>
+                  <code class="border-top">
+    sudo systemctl status nearbyshopsapi.service
+                    </code>
+                  </pre>
+
+
+                  <p>
+                      The above command will give you the process number.
+                      We will use this number to kill this process and check to see if the process restarts automatically or not.
+                  </p>
+
+
+                  <pre class="card bg-light align-content-start">
+                  <span class="fas fa-code p-3">   Code</span>
+                  <code class="border-top">
+    sudo kill -9 process_number
+                    </code>
+                  </pre>
+
+
+
+                  <p>
+                      Use the above command to kill the process.
+                      </br></br>
+                      Now check the status of the service by typing the following command. Is the Service Still Running ?
+                      If the answer is yes.
+                      This verifies that our mechanism is working successfully and the SystemD is monitoring
+                      and restarting the process automatically when terminated.
+                  </p>
+
+
+                  <pre class="card bg-light align-content-start">
+                  <span class="fas fa-code p-3">   Code</span>
+                  <code class="border-top">
+    sudo systemctl status nearbyshopsapi.service
+                    </code>
+                  </pre>
+
+
+                  <p>
+                      You will need to study various SystemD and systemCtl commands to manage things in a better way.
+                      For this purpose see this reference which lists various SystemCtl commands to manage the process execution.
+
+                      <a href="#">Systemd Linux terminal Commands</a>
+                  </p>
+
+
+
+
+              </div>
+              <!-- End Article -->
+
+
+
+            </div>
+          </div>
+          <!-- End Article Section -->
+
+      </div>
+
+
+
+        <!-- sidebar, which will move to the top on a small screen -->
+        <div class="col-lg-3">
+
+          <nav id="toc" data-toggle="toc" class="sticky-top space-2 font-size-5">
+            <p class="font-weight-light ml-3 text-primary font-size-2">On this page</p>
+          </nav>
+        </div>
+
+
+      </div>
+    </div>
+  </main>
+  <!-- ========== END MAIN ========== -->
+
+
+
+
+  <div id="footer"></div>
+
+
+
+  <!-- Go to Top -->
+  <a class="js-go-to u-go-to" href="#"
+    data-position='{"bottom": 15, "right": 15 }'
+    data-type="fixed"
+    data-offset-top="400"
+    data-compensation="#header"
+    data-show-effect="slideInUp"
+    data-hide-effect="slideOutDown">
+    <span class="fas fa-arrow-up u-go-to__inner"></span>
+  </a>
+  <!-- End Go to Top -->
+
+  <!-- JS Global Compulsory -->
+  <script src="../assets/vendor/jquery/dist/jquery.min.js"></script>
+  <script src="../assets/vendor/jquery-migrate/dist/jquery-migrate.min.js"></script>
+  <script src="../assets/vendor/popper.js/dist/umd/popper.min.js"></script>
+  <script src="../assets/vendor/bootstrap/bootstrap.min.js"></script>
+
+  <!-- add after bootstrap.min.js -->
+  <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+
+
+
+  <!-- JS Implementing Plugins -->
+  <script src="../assets/vendor/hs-megamenu/src/hs.megamenu.js"></script>
+  <script src="../assets/vendor/svg-injector/dist/svg-injector.min.js"></script>
+  <script src="../assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/vendor/jquery-validation/dist/jquery.validate.min.js"></script>
+
+  <!-- JS Front -->
+  <script src="../assets/js/hs.core.js"></script>
+  <script src="../assets/js/components/hs.header.js"></script>
+  <script src="../assets/js/components/hs.unfold.js"></script>
+  <script src="../assets/js/components/hs.malihu-scrollbar.js"></script>
+  <script src="../assets/js/components/hs.validation.js"></script>
+  <script src="../assets/js/components/hs.focus-state.js"></script>
+  <script src="../assets/js/components/hs.show-animation.js"></script>
+  <script src="../assets/js/components/hs.svg-injector.js"></script>
+  <script src="../assets/js/components/hs.go-to.js"></script>
+
+
+
+  <!-- JS Plugins Init. -->
+  <script>
+
+
+    $(function(){
+      $("#header").load("../header.html");
+      $("#footer").load("../footer.html");
+
+
+      $("#table-of-contents").load("table-of-contents-installation.html");
+
+    });
+
+
+    $(window).on('load', function () {
+      // initialization of HSMegaMenu component
+      $('.js-mega-menu').HSMegaMenu({
+        event: 'hover',
+        pageContainer: $('.container'),
+        breakpoint: 767.98,
+        hideTimeOut: 0
+      });
+
+      // initialization of svg injector module
+      $.HSCore.components.HSSVGIngector.init('.js-svg-injector');
+    });
+
+    $(document).on('ready', function () {
+      // initialization of header
+      $.HSCore.components.HSHeader.init($('#header'));
+
+      // initialization of unfold component
+      $.HSCore.components.HSUnfold.init($('[data-unfold-target]'), {
+        afterOpen: function () {
+          $(this).find('input[type="search"]').focus();
+        }
+      });
+
+      // initialization of malihu scrollbar
+      $.HSCore.components.HSMalihuScrollBar.init($('.js-scrollbar'));
+
+      // initialization of show animations
+      $.HSCore.components.HSShowAnimation.init('.js-animation-link');
+
+      // initialization of form validation
+      $.HSCore.components.HSValidation.init('.js-validate', {
+        rules: {
+          confirmPassword: {
+            equalTo: '#signupPassword'
+          }
+        }
+      });
+
+      // initialization of forms
+      $.HSCore.components.HSFocusState.init();
+
+      // initialization of go to
+      $.HSCore.components.HSGoTo.init('.js-go-to');
+    });
+  </script>
+</body>
+</html>

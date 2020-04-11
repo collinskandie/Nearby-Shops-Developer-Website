@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-92673120-3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-92673120-3');
+    </script>
+
+
+    <!-- Title -->
+  <title>Nearby Shops | Developer : Create Database, Add User and Grant Privileges</title>
+
+
+  <!-- Required Meta Tags Always Come First -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="favicon.ico">
+
+  <!-- Google Fonts -->
+  <link href="//fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+
+  <!-- CSS Implementing Plugins -->
+  <link rel="stylesheet" href="../assets/vendor/font-awesome/css/fontawesome-all.min.css">
+  <link rel="stylesheet" href="../assets/vendor/animate.css/animate.min.css">
+  <link rel="stylesheet" href="../assets/vendor/hs-megamenu/src/hs.megamenu.css">
+  <link rel="stylesheet" href="../assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css">
+  <link rel="stylesheet" href="../assets/vendor/cubeportfolio/css/cubeportfolio.min.css">
+
+
+  <link rel="stylesheet" href="../assets/vendor/jquery-ui/themes/base/jquery-ui.min.css">
+  <link rel="stylesheet" href="../assets/vendor/prism/prism.css">
+
+
+
+  <!-- CSS Front Template -->
+  <link rel="stylesheet" href="../assets/css/theme.css">
+
+  <link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css"/>
+
+
+
+  <!-- CSS Front Doc -->
+  <link rel="stylesheet" href="../assets/css/starter.css">
+
+
+  <style>
+
+    p{
+      color: #0a0a0a;
+      font-family:Helvetica Neue, Helvetica, Arial, sans-serif;
+    }
+
+
+    /*font-family: "Helvetica Neue", Arial, sans-serif;*/
+
+    h2{
+      color: orange;
+      font-weight: normal;
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+
+    h3{
+      color: green;
+      font-weight: lighter;
+      font-size: larger;
+    }
+
+
+
+  </style>
+
+
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+
+
+  <div id="header"></div>
+
+
+  <!-- ========== MAIN ========== -->
+  <main id="content" role="main">
+    <!-- Search Section -->
+    <div class="gradient-half-primary-v1">
+      <div class="bg-img-hero-center" style="background-image: url(../assets/svg/components/bg-elements-10.svg);">
+        <div class="container space-1">
+          <div class="d-inline-block">
+            <a href="install-postgres.html" data-toc-skip class="h5 text-white">Database</a>
+            <a data-toc-skip class="h5 text-white font-size-2 font-weight-light ml-2 mr-2">/</a>
+            <a href="#" data-toc-skip class="h5 text-white font-weight-normal">Create Database, Add User and Grant Privileges</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Search Section -->
+
+
+
+    <div class="container-fluid pl-3 pr-3">
+      <div class="row">
+
+        <div class="col-lg-3 col-12 pl-5 text-center d-inline-block">
+          <div id="table-of-contents" class="sticky-top"></div>
+        </div>
+
+
+      <!-- main content area -->
+      <div class="col-lg-6">
+
+
+          <!-- Article Section -->
+          <div class="space-bottom-2">
+            <div class="">
+
+              <!--&lt;!&ndash; Breadcrumbs &ndash;&gt;-->
+              <!--<nav aria-label="breadcrumb">-->
+                <!--<ol class="breadcrumb breadcrumb-no-gutter font-size-1 space-1">-->
+                  <!--<li class="breadcrumb-item"><a href="help.html">Front Help Center</a></li>-->
+                  <!--<li class="breadcrumb-item"><a href="help.html">Getting started</a></li>-->
+                  <!--<li class="breadcrumb-item active" aria-current="page">What's Front?</li>-->
+                <!--</ol>-->
+              <!--</nav>-->
+              <!--&lt;!&ndash; End Breadcrumbs &ndash;&gt;-->
+
+
+
+              <!-- Article -->
+              <div class="card shadow-sm p-lg-7 p-4">
+                <h2 >Create Database, Add User and Grant Privileges</h2>
+                <p class="font-size-2">In this article we will learn how to Create Database, Add User and Grant Privileges to the User</p>
+
+
+
+                  <P>
+                      This tutorial is taken from the following link. Many thanks to the one who created it.
+                      </br></br>
+                      <a href="https://medium.com/coding-blocks/creating-user-database-and-adding-access-on-postgresql-8bfcd2f4a91e">
+                          https://medium.com/coding-blocks/creating-user-database-and-adding-access-on-postgresql-8bfcd2f4a91e
+                      </a>
+                  </P>
+
+
+
+                <h3>Prerequisite Knowledge</h3>
+                  <p>
+                  To understand this upgrade guide you dont need to be an expert but having some basic knowledge of linux terminal commands and postgres Database will help you.
+                  </p>
+
+
+
+                <h3 >Steps for Creating Database, Add User and grant privileges</h3>
+
+                <p> Step 1 : Creating user</br>
+                    Step 2 : Creating Database</br>
+                    Step 3 : Giving the user a password</br>
+                    Step 4 : Granting privileges on database</br>
+
+                </p>
+
+
+                  <p>We also have an alternate option :  Doing purely via psql</p>
+
+                  <h3>Alternate Option : Doing purely via psql</h3>
+
+
+
+                <p class="border-top space-1">Let us begin the step by step guide to create database, add user and grant privileges</p>
+
+
+
+
+                  <P>One nice thing about PGSQL is it comes with some utility binaries like <b>createuser</b> and <b>createdb</b>.
+                      So we will be making use of that. As the default configuration of Postgres is,
+                      a user called postgres is made on and the user postgres has full superadmin access to entire PostgreSQL instance running on your OS.</P>
+
+
+                  <pre class="card bg-light align-content-start">
+                  <span class="fas fa-code p-3">   Code</span>
+                  <code class="border-top">
+    $ sudo -u postgres psql
+                    </code>
+                  </pre>
+
+
+                  <p>
+                      The above command gets you the psql command line interface in full admin mode.
+                      </br></br>
+                      In the following commands, keep in mind the < angular brackets > are to denote
+                      variables you have to set yourself. In the actual command, omit the <>
+                  </p>
+
+
+
+
+                  <h2>Step 1 : Creating user</h2>
+
+
+
+
+                  <pre class="card bg-light align-content-start">
+                  <span class="fas fa-code p-3">   Code</span>
+                  <code class="border-top">
+    $ sudo -u postgres createuser &lt;username&gt;
+                    </code>
+                  </pre>
+
+
+
+
+                  <h2>Step 2 : Creating Database</h2>
+
+
+
+
+                  <pre class="card bg-light align-content-start">
+                  <span class="fas fa-code p-3">   Code</span>
+                  <code class="border-top">
+    $ sudo -u postgres createdb &lt;dbname&gt;
+                    </code>
+                  </pre>
+
+
+
+
+                  <h2>Step 3 : Giving the user a password</h2>
+
+
+
+
+                  <pre class="card bg-light align-content-start">
+                  <span class="fas fa-code p-3">   Code</span>
+                  <code class="border-top">
+    $ sudo -u postgres psql
+    psql=# alter user &lt;username> with encrypted password '&lt;password&gt;';
+                    </code>
+                  </pre>
+
+
+
+                  <h2 >Step 4 : Granting privileges on database</h2>
+
+
+
+
+                  <pre class="card bg-light align-content-start">
+                  <span class="fas fa-code p-3">   Code</span>
+                  <code class="border-top">
+    psql=# grant all privileges on database &lt;dbname&gt; to &lt;username&gt; ;
+                    </code>
+                  </pre>
+
+
+                  <p>And yeah, that should be pretty much it !</p>
+
+
+
+                  <h2 >Alternate Option : Doing purely via psql</h2>
+
+                  <p>
+                      Your OS might not have the createuser or createdb binaries,
+                      or you may, for some reason want to do it purely via psql,
+                      then these are the three magic commands —
+                  </p>
+
+
+
+
+                  <pre class="card bg-light align-content-start">
+                  <span class="fas fa-code p-3">   Code</span>
+                  <code class="border-top">
+    CREATE DATABASE yourdbname;
+    CREATE USER youruser WITH ENCRYPTED PASSWORD 'yourpass';
+    GRANT ALL PRIVILEGES ON DATABASE yourdbname TO youruser;
+                    </code>
+                  </pre>
+
+
+
+
+                  <h2 >Links and Resources</h2>
+
+
+                  <a href="https://medium.com/coding-blocks/creating-user-database-and-adding-access-on-postgresql-8bfcd2f4a91e">
+                      https://medium.com/coding-blocks/creating-user-database-and-adding-access-on-postgresql-8bfcd2f4a91e
+                  </a>
+
+
+
+
+              </div>
+              <!-- End Article -->
+
+
+
+            </div>
+          </div>
+          <!-- End Article Section -->
+
+      </div>
+
+
+
+        <!-- sidebar, which will move to the top on a small screen -->
+        <div class="col-lg-3">
+
+          <nav id="toc" data-toggle="toc" class="sticky-top space-2 font-size-5">
+            <p class="font-weight-light ml-3 text-primary font-size-2">On this page</p>
+          </nav>
+        </div>
+
+
+      </div>
+    </div>
+  </main>
+  <!-- ========== END MAIN ========== -->
+
+
+
+
+  <div id="footer"></div>
+
+
+
+  <!-- Go to Top -->
+  <a class="js-go-to u-go-to" href="#"
+    data-position='{"bottom": 15, "right": 15 }'
+    data-type="fixed"
+    data-offset-top="400"
+    data-compensation="#header"
+    data-show-effect="slideInUp"
+    data-hide-effect="slideOutDown">
+    <span class="fas fa-arrow-up u-go-to__inner"></span>
+  </a>
+  <!-- End Go to Top -->
+
+  <!-- JS Global Compulsory -->
+  <script src="../assets/vendor/jquery/dist/jquery.min.js"></script>
+  <script src="../assets/vendor/jquery-migrate/dist/jquery-migrate.min.js"></script>
+  <script src="../assets/vendor/popper.js/dist/umd/popper.min.js"></script>
+  <script src="../assets/vendor/bootstrap/bootstrap.min.js"></script>
+
+  <!-- add after bootstrap.min.js -->
+  <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+
+
+
+  <!-- JS Implementing Plugins -->
+  <script src="../assets/vendor/hs-megamenu/src/hs.megamenu.js"></script>
+  <script src="../assets/vendor/svg-injector/dist/svg-injector.min.js"></script>
+  <script src="../assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/vendor/jquery-validation/dist/jquery.validate.min.js"></script>
+
+  <!-- JS Front -->
+  <script src="../assets/js/hs.core.js"></script>
+  <script src="../assets/js/components/hs.header.js"></script>
+  <script src="../assets/js/components/hs.unfold.js"></script>
+  <script src="../assets/js/components/hs.malihu-scrollbar.js"></script>
+  <script src="../assets/js/components/hs.validation.js"></script>
+  <script src="../assets/js/components/hs.focus-state.js"></script>
+  <script src="../assets/js/components/hs.show-animation.js"></script>
+  <script src="../assets/js/components/hs.svg-injector.js"></script>
+  <script src="../assets/js/components/hs.go-to.js"></script>
+
+  <!-- JS Plugins Init. -->
+  <script>
+
+
+    $(function(){
+        $("#header").load("../header.html");
+        $("#footer").load("../footer.html");
+
+
+      $("#table-of-contents").load("table-of-contents-database.html");
+
+    });
+
+
+    $(window).on('load', function () {
+      // initialization of HSMegaMenu component
+      $('.js-mega-menu').HSMegaMenu({
+        event: 'hover',
+        pageContainer: $('.container'),
+        breakpoint: 767.98,
+        hideTimeOut: 0
+      });
+
+      // initialization of svg injector module
+      $.HSCore.components.HSSVGIngector.init('.js-svg-injector');
+    });
+
+    $(document).on('ready', function () {
+      // initialization of header
+      $.HSCore.components.HSHeader.init($('#header'));
+
+      // initialization of unfold component
+      $.HSCore.components.HSUnfold.init($('[data-unfold-target]'), {
+        afterOpen: function () {
+          $(this).find('input[type="search"]').focus();
+        }
+      });
+
+      // initialization of malihu scrollbar
+      $.HSCore.components.HSMalihuScrollBar.init($('.js-scrollbar'));
+
+      // initialization of show animations
+      $.HSCore.components.HSShowAnimation.init('.js-animation-link');
+
+      // initialization of form validation
+      $.HSCore.components.HSValidation.init('.js-validate', {
+        rules: {
+          confirmPassword: {
+            equalTo: '#signupPassword'
+          }
+        }
+      });
+
+      // initialization of forms
+      $.HSCore.components.HSFocusState.init();
+
+      // initialization of go to
+      $.HSCore.components.HSGoTo.init('.js-go-to');
+    });
+  </script>
+</body>
+</html>

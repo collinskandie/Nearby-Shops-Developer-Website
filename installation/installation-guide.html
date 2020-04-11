@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-92673120-3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-92673120-3');
+    </script>
+
+
+    <!-- Title -->
+  <title>Nearby Shops | Developer : Installation Guide</title>
+
+  <!-- Required Meta Tags Always Come First -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="favicon.ico">
+
+  <!-- Google Fonts -->
+  <link href="//fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+
+  <!-- CSS Implementing Plugins -->
+  <link rel="stylesheet" href="/assets/vendor/font-awesome/css/fontawesome-all.min.css">
+  <link rel="stylesheet" href="/assets/vendor/animate.css/animate.min.css">
+  <link rel="stylesheet" href="/assets/vendor/hs-megamenu/src/hs.megamenu.css">
+  <link rel="stylesheet" href="/assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css">
+  <link rel="stylesheet" href="/assets/vendor/cubeportfolio/css/cubeportfolio.min.css">
+
+
+  <link rel="stylesheet" href="/assets/vendor/jquery-ui/themes/base/jquery-ui.min.css">
+  <link rel="stylesheet" href="/assets/vendor/prism/prism.css">
+
+
+
+  <!-- CSS Front Template -->
+  <link rel="stylesheet" href="/assets/css/theme.css">
+
+  <link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css"/>
+
+
+
+  <!-- CSS Front Doc -->
+  <link rel="stylesheet" href="/assets/css/starter.css">
+
+
+  <style>
+
+    p{
+      color: #0a0a0a;
+      font-family:Helvetica Neue, Helvetica, Arial, sans-serif;
+    }
+
+
+    /*font-family: "Helvetica Neue", Arial, sans-serif;*/
+
+    h2{
+      color: orange;
+      font-weight: normal;
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+
+    h3{
+      color: green;
+      font-weight: lighter;
+      font-size: larger;
+    }
+
+
+
+  </style>
+
+
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+
+
+  <div id="header"></div>
+
+
+  <!-- ========== MAIN ========== -->
+  <main id="content" role="main">
+    <!-- Search Section -->
+    <div class="gradient-half-primary-v1">
+      <div class="bg-img-hero-center" style="background-image: url(/assets/svg/components/bg-elements-10.svg);">
+        <div class="container space-1">
+          <div class="d-inline-block">
+            <a href="installation-guide.html" data-toc-skip class="h5 text-white">Installation</a>
+            <a data-toc-skip class="h5 text-white font-size-2 font-weight-light ml-2 mr-2">/</a>
+            <a href="installation-guide.html" data-toc-skip class="h5 text-white font-weight-normal">Installation Guide</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Search Section -->
+
+
+    <div class="container-fluid pl-3 pr-3">
+      <div class="row">
+
+        <div class="col-lg-3 col-12 pl-5 text-center d-inline-block">
+          <div id="table-of-contents" class="sticky-top"></div>
+        </div>
+
+
+      <!-- main content area -->
+      <div class="col-lg-6">
+
+
+          <!-- Article Section -->
+          <div class="space-bottom-2">
+            <div class="">
+
+              <!--&lt;!&ndash; Breadcrumbs &ndash;&gt;-->
+              <!--<nav aria-label="breadcrumb">-->
+                <!--<ol class="breadcrumb breadcrumb-no-gutter font-size-1 space-1">-->
+                  <!--<li class="breadcrumb-item"><a href="help.html">Front Help Center</a></li>-->
+                  <!--<li class="breadcrumb-item"><a href="help.html">Getting started</a></li>-->
+                  <!--<li class="breadcrumb-item active" aria-current="page">What's Front?</li>-->
+                <!--</ol>-->
+              <!--</nav>-->
+              <!--&lt;!&ndash; End Breadcrumbs &ndash;&gt;-->
+
+
+
+              <!-- Article -->
+              <div class="card shadow-sm p-lg-7 p-4">
+                <h2 >Install Nearby Shops on Ubuntu</h2>
+                <p class="font-size-2">In this article we will learn how to install Nearby Shops API on ubuntu 16.04</p>
+
+
+
+                <h3>Prerequisite Knowledge</h3>
+                <p>
+                  To understand this installation guide you dont need to be an expert but having some basic knowledge of linux terminal commands, PostgreSQL Database and java will help you.
+                  </p>
+
+
+                <h3 >Steps for Installation</h3>
+
+                <p>1. Install OpenJDK 8 or OpenJDK 11</br>
+                    2. Install Postgres Database Latest Version</br>
+                    3. Create Database , add User, assign password and Grant Privileges</br>
+                    4. Download Jar file and Configuration File</br>
+                    5. Add / Update API Configuration</br>
+                    6. Test jar file by running it</br>
+                    7. Automate Execution of API jar file using SystemD</br>
+                    9. Setup third party Integrations </br>
+                    8. Create Domain name for the api </br>
+                    10. Customize the android apps</br>
+                    11. Login as admin and Configure Settings
+                </p>
+
+
+
+                
+                  <h3 >Optional Tasks</h3>
+                  <p>1. Add swap space to the server</br>
+                    2. Submit to Market aggregators
+                  </p>
+
+
+
+
+
+                <!-- Alert -->
+                <div class="alert alert-warning p-4 mb-5 mt-5" role="alert">
+
+                  <h3><span class="fas fa-ambulance font-size-2 mt-1 mr-3"></span>Caution for Developers</h3>
+                  <p>Currently the API Authenticates using Basic Auth and Lacks TLS / SSL Security.
+                    Its not safe to run a production version of the app without the TLS encryption.
+                    When planning to run a production version please ensure you have TLS encryption before you start.</p>
+
+                </div>
+
+
+
+                <p class="border-top space-1">Enough of the Introduction and Let us now begin with the step by step installation Guide for Nearby Shops API Backend</p>
+
+
+
+
+
+                <h2 >Step 1 : Install OpenJDK 8</h2>
+
+
+                <p >
+                  Our API Runs on Java therefore we need JDK on our machine. We can install Oracle JDK also.
+                  But we recommend you to install OpenJDK-8 the open-source version of the JDK to stay on the safe side of licensing.
+                </p>
+
+
+                <p>To install OpenJDK 8. Type the following commands on your terminal</p>
+
+
+                <pre class="card bg-light align-content-start">
+                  <span class="fas fa-code p-3">   Code</span>
+                  <code class="border-top">
+    sudo apt-get udpate
+    sudo apt-get install openjdk-8-jdk
+      </code>
+                </pre>
+
+                <p>in order to verify jdk has been installed use the following commands</p>
+
+                <pre class="card bg-light align-content-start">
+                  <span class="fas fa-code p-3">   Code</span>
+                  <code class="border-top">
+    java -version
+                    </code>
+                </pre>
+
+
+                <p>The above command gives the following output which indicates that Java 8 has been installed</p>
+
+
+                <pre class="card bg-light">
+                  <span class="fas fa-arrow-circle-right p-3">   Output</span>
+                  <code class="border-top">
+  openjdk version “1.8.0_151”
+  OpenJDK Runtime Environment (build 1.8.0_151-8u151-b12-0ubuntu0.16.04.2-b12)
+  OpenJDK 64-Bit Server VM (build 25.151-b12, mixed mode)
+                    </code>
+                </pre>
+
+
+
+                  <p>For more information on JDK installation you can also refer to this guide
+                      <a href="https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-on-ubuntu-18-04">
+                          JDK installation tutorial from Digital Ocean
+                      </a>
+                  </p>
+
+
+                <h2>Step 2 : Install PostgreSQL Database Latest Version</h2>
+
+
+                <p>
+                  We use postgres as our primary database therefore we need to install Postgres. Currently Postgres 10 is the latest version of Postgres therefore we will install Postgres 10.
+                  </br></br>
+                  The instructions to install Postgres 10 are given at the following link
+                  </br></br>
+                  <a href="http://yallalabs.com/linux/how-to-install-and-use-postgresql-10-on-ubuntu-16-04/"> http://yallalabs.com/linux/how-to-install-and-use-postgresql-10-on-ubuntu-16-04/</a>
+                  </br></br>
+                  If these instructions do not work for you. You can always find a tutorial on Postgres Installation by searching on Google.
+
+                </p>
+
+
+
+
+                <h2>Step 3 : Create Database and add User</h2>
+
+
+                <p>
+                  We need to create new database and add new user with password. We will grant all privileges for database to the new user we have created.
+                  </br></br>
+                  After the above step please save the database name, username and password somewhere because we will require that in following steps.
+
+                  The following article provides very good overview of what command will be required.
+                  </br></br>
+
+                  <a href="https://medium.com/coding-blocks/creating-user-database-and-adding-access-on-postgresql-8bfcd2f4a91e">
+                      https://medium.com/coding-blocks/creating-user-database-and-adding-access-on-postgresql-8bfcd2f4a91e
+                  </a>
+
+                  </br></br>
+                  Make sure you don’t use “postgres” as username and “password” as password. They are popular defaults and hackers look for them. Therefore using them as username and password is going to make your postgresql Installation vulnerable to hacking attacks.
+
+                </p>
+
+
+
+
+                <h2>Step 4 : Download Jar File and Configuration File</h2>
+
+
+                <p>
+
+                  Head over to the <a href="downloads.html"> Download section </a>. From the downloads section copy the download link and  download the jar file and the api configuration file. If the files are available in zip format so you will need to unzip them after you have downloaded them.
+                  </br></br>
+                  You should keep the jar file and configuration file in one folder. Because api jar file needs configuration file in order to execute.
+                  </br></br>
+                  Please note that you can also generate your own jar file (fat jar / uber jar) using source code. Please refer the guide <a href="generate-fat-jar-from-source.html">“generate fat jar from source code”</a>  available in this section.
+                  </br></br>
+                  You can download the files using the wget command from the terminal
+                </p>
+
+
+                <pre class="card bg-light align-content-start">
+                  <span class="fas fa-code p-3">   Code</span>
+                  <code class="border-top">
+    cd ~
+    mkdir nearbyshops
+    cd nearbyshops
+
+    wget [download-link-for-jar-file]
+    wget [download-link-for-configuration-file]
+                  </code>
+                </pre>
+
+
+                <p>In case the files are in zip format</p>
+
+
+
+                <pre class="card bg-light align-content-start">
+                  <span class="fas fa-code p-3">   Code</span>
+                  <code class="border-top">
+  unzip [jar-file-name.jar]
+  unzip [configuration-file-name.jar]
+                  </code>
+                </pre>
+
+
+
+                <h2>Step 5 : Connect with Postgres Database</h2>
+
+                <p>Use the following commands to edit the configuration file.</p>
+
+                <pre class="card bg-light align-content-start">
+                  <span class="fas fa-code p-3">   Code</span>
+                  <code class="border-top">
+   cd ~/nearbyshops
+   sudo nano api_config.properties
+                  </code>
+                </pre>
+
+
+                <p>
+                  In the step 3 we created new Database and added a new user with username and password. We will now have to edit the configuration file and provide the database name and username and password.
+                  </br></br>
+                  In order to update the database name we will have to update the JDBC URL. The format of JDBC URL is given here
+                  </br></br>
+                  <a href="https://jdbc.postgresql.org/documentation/80/connect.html">
+                    https://jdbc.postgresql.org/documentation/80/connect.html
+                  </a>
+                </p>
+
+
+                <pre class="card bg-light align-content-start">
+                  <span class="fas fa-code p-3">   Code</span>
+                  <code class="border-top">
+   jdbc:postgresql://host:port/database
+                  </code>
+                </pre>
+
+
+                <p>If your host is localhost, port is 5432 and database name is nearbyshopsdb then your jdbc url would be</p>
+
+                <pre class="card bg-light align-content-start">
+                  <span class="fas fa-code p-3">   Code</span>
+                  <code class="border-top">
+   jdbc:postgresql://localhost:5432/nearbyshopsdb
+                  </code>
+                </pre>
+
+
+                <p>Update the api configuration file with the new values for jdbc url and username and password.
+                  </br></br>
+                    Instructions to update the configuration are given in the configuration file. You can learn from those instructions how to configure the api.
+                </p>
+
+
+
+                <h2>Step 6 : Test the jar file by running it</h2>
+
+                <p>
+                  After updating the configuration file you can now run the Jar file and see whether it runs successfully.
+                     </br></br>
+                    Note : Before running the Jar file ensure that you have a configuration file with correct name. The name of the configuration file should be “api_config.properties”
+                    </br></br>
+                    <span class="fas fa-arrow-right"> Another Important Note</span> : Please ensure that your jar file and api configuration file is in the same folder. If you dont keep them
+                    in same folder the execution will fail !
+                </p>
+
+
+                <pre class="card bg-light align-content-start">
+                  <span class="fas fa-code p-3">   Code</span>
+                  <code class="border-top">
+   cd ~/nearbyshops
+   java -jar ./[file-name].jar
+
+   <span class="text-primary">Please Note : Replace file-name with the name of your file</span>
+                  </code>
+                </pre>
+
+
+                  <p>
+                      <span class="fas fa-arrow-right"> Verify Successful Execution</span> : In order to verify and test that we have a successful connection to the api. We will
+                      test the endpoints to see if we get any result. The url for the endpoint is
+                      <br>
+                      <span class="text-indigo font-weight-bold"> [IP:port]/api/serviceconfiguration</span>
+                      <br>
+                      Replace the IP and port number according to your installation. For example if you are running this jar file on your local computer at port address
+                      1500 your url
+                      will be
+
+                      <span class="text-indigo font-weight-bold"> localhost:1500/api/serviceconfiguration</span>
+
+                      when you execute this url in your browser you should see some json output.
+                      <br>
+                      Having the output verifies successful execution.
+                  </p>
+
+
+
+                  <h2>Step 7 : Configure SystemD to auto restart the java process</h2>
+
+                <p>
+                  Sometimes the java process can terminate unexpectedly. This can happen due to unexpected server restart or other technical reasons.
+                  Therefore we need a mechanism which automatically restarts the java process if it gets terminated.
+                  We also need to ensure that process starts automatically at server restart.
+                  </br></br>
+                  To solve this issue we will use SystemD init system available in Ubuntu Linux.
+                  SystemD is a system in linux which handles the execution of the programs.
+                  We will write a small script which will tell SystemD to restart our Java process if it gets terminated unexpectedly.
+                  </br></br>
+                  Dont worry you dont need to know anything about systemD just follow the instructions and you're done !
+                  </br></br>
+                  Please read the article
+                  <a href="configure-systemd.html">Configure SystemD</a>
+                   which will tell you how you can setup the auto restart mechanism for Java process using SystemD init system.
+                  </br></br>
+
+                </p>
+
+
+
+
+
+<!--                <h2 class="space-top-2 text-primary" style="margin-bottom: 0px">Remaining Tasks</h2>-->
+
+                <h2 style="margin-top: 30px">Step 8 : Setup Third Party Integrations</h2>
+
+
+                <p>
+                  To enable SMS-OTP, Email and Push Notifications you need to setup third party integrations.
+                  The guide for setting up third party Integrations is provided in the “Integrations” section.
+                  </br></br>
+                  So head over to integrations guide and follow the instructions.
+                  Setting up SMS-OTP is mandatory for login. You cant log into the app unless you setup these basic third party integrations.
+                </p>
+
+
+
+                  <h2 style="margin-top: 30px">Step 9 : Configure Domain Name for the API</h2>
+
+                  <p>
+                      If you wish to use the API Server for a long duration or for a production usage. You must setup a domain name for the API server.
+                      This is necessary because the IP address of the API Server can change when you are doing some maintenance or for any other reason.
+                      </br></br>
+                      If you have a domain name you will not have to update API Server URL on the client side
+                      every time there is a change in the server IP.
+                      If you dont set a domain name you will have to update the API Server URL every time there is a change in server IP.
+                      And this can get really messy and can give you a huge headache and some grey hair ... just joking !
+                      </br></br>
+                      Therefore you must assign a domain name for the API server.
+                      </br></br>
+                      An example for the domain name would be  [ api.nearbyshops.org ]
+                  </p>
+
+
+
+
+                  <h2 style="margin-top: 30px">Step 10 : Build and Customize the android app</h2>
+
+                <p>
+                  
+                  To use the app for production use. You will need to customize the android app to use your own brand name, brand logo, colors and graphics.
+                  </br></br>
+                  You will also be required to update the url for api server in order to connect the app with your own api backend installation.
+                  </br></br>
+                  The complete guide for customizing the android apps is provided in
+                  <a href="customize-apps.html">customize apps</a>
+                  guide.
+                </p>
+
+
+                <h2 style="margin-top: 30px">Step 11 : Login as Admin and Update app Service Configuration</h2>
+
+
+                <p class="margin-top: 30px">
+                  After doing all the technical setup you need to setup some basic configuration for the app.
+                    Like setting up the country and service name.
+                    Setting up the country sets the currency accordingly. So it is very essential that you complete this configuration.
+                    <br><br>
+                    For setting up the app configuration you will be required to login as admin to the admin app.
+                    <br><br>
+                    You can download the admin app from the downloads page of this section.
+                    <br><br>
+                    The credentials for the admin are provided in the api_config.properties available at your api server.
+                    <br><br>
+                    After you login as admin you need to open service configuration screen in the admin app
+                    and update the country and other settings accordingly.
+                </p>
+
+
+
+<!--                <h2 style="margin-top: 30px">Step 3 : Read the getting started guide for Admin</h2>-->
+
+
+<!--                <p class="space-bottom-2">-->
+<!--                  After doing all the technical setup you need to read the-->
+
+<!--                  <a href="#">Getting Started</a>-->
+<!--                  guide which will tell you how to proceed and start as a administrator.-->
+<!--                  This guide is available in this section..-->
+<!--                </p>-->
+
+
+
+
+
+
+                  <h2 class="space-top-2 text-primary" style="margin-bottom: 0px">Optional Tasks</h2>
+
+
+
+
+                  <h2 style="margin-top: 30px">Step 1 : Add Swap Space to the API Server</h2>
+
+
+                  <p>
+                      If you wish to use the API server for the long term you need to add some swap space so that you dont face memory shortage.
+                      </br></br>
+                      <a href="https://www.digitalocean.com/community/tutorials/how-to-add-swap-space-on-ubuntu-16-04">
+                          https://www.digitalocean.com/community/tutorials/how-to-add-swap-space-on-ubuntu-16-04
+                      </a>
+                      </br></br>
+                      You can add the swap space by following the instructions in the tutorial given in above link.
+                  </p>
+
+
+
+
+
+                  <h2 style="margin-top: 30px">Step 2 : Submit your app to market aggregators</h2>
+
+                  <p>
+                      As the name suggests market aggregator are apps from which people can access multiple markets.
+                      By submitting your instance to market aggregators. You can gain free access to existing audience
+                      of market aggregators. Thereby reducing your marketing costs.
+                      To submit your instance to market aggregators please
+                      <a href="/installation/setup-multi-market-mode.html">read this page.</a>
+                  </p>
+
+
+
+
+
+                  <!--&lt;!&ndash; Related Articles &ndash;&gt;-->
+                <!--<div class="mb-4 border-top space-top-2">-->
+                  <!--<h3 class="font-weight-medium">Related articles</h3>-->
+                <!--</div>-->
+
+                <!--<ul class="list-unstyled">-->
+                  <!--<li class="pb-3"><a class="link-muted" href="help.html">Troubleshoot connection issues</a></li>-->
+                  <!--<li class="pb-3"><a class="link-muted" href="help.html">Getting started for workspace creators</a></li>-->
+                  <!--<li class="pb-3"><a class="link-muted" href="help.html">Edit your profile</a></li>-->
+                <!--</ul>-->
+                <!--&lt;!&ndash; End Related Articles &ndash;&gt;-->
+
+
+
+
+                  <p class="border-top space-top-2 font-size-2 font-weight-light">
+                      Facing difficulty in understanding ? ... let us know !
+                      If you have any questions and queries feel free to get in touch with us on our
+                      <a href="http://forum.nearbyshops.org">forum</a>
+                  </p>
+
+
+              </div>
+              <!-- End Article -->
+
+
+
+            </div>
+          </div>
+          <!-- End Article Section -->
+
+      </div>
+
+
+
+        <!-- sidebar, which will move to the top on a small screen -->
+        <div class="col-lg-3">
+
+          <nav id="toc" data-toggle="toc" class="sticky-top space-2 font-size-5">
+            <p class="font-weight-light ml-3 text-primary font-size-2">On this page</p>
+          </nav>
+        </div>
+
+
+      </div>
+    </div>
+  </main>
+  <!-- ========== END MAIN ========== -->
+
+
+
+
+  <div id="footer"></div>
+
+
+
+  <!-- Go to Top -->
+  <a class="js-go-to u-go-to" href="#"
+    data-position='{"bottom": 15, "right": 15 }'
+    data-type="fixed"
+    data-offset-top="400"
+    data-compensation="#header"
+    data-show-effect="slideInUp"
+    data-hide-effect="slideOutDown">
+    <span class="fas fa-arrow-up u-go-to__inner"></span>
+  </a>
+  <!-- End Go to Top -->
+
+  <!-- JS Global Compulsory -->
+  <script src="/assets/vendor/jquery/dist/jquery.min.js"></script>
+  <script src="/assets/vendor/jquery-migrate/dist/jquery-migrate.min.js"></script>
+  <script src="/assets/vendor/popper.js/dist/umd/popper.min.js"></script>
+  <script src="/assets/vendor/bootstrap/bootstrap.min.js"></script>
+
+  <!-- add after bootstrap.min.js -->
+  <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+
+
+
+  <!-- JS Implementing Plugins -->
+  <script src="/assets/vendor/hs-megamenu/src/hs.megamenu.js"></script>
+  <script src="/assets/vendor/svg-injector/dist/svg-injector.min.js"></script>
+  <script src="/assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="/assets/vendor/jquery-validation/dist/jquery.validate.min.js"></script>
+
+  <!-- JS Front -->
+  <script src="/assets/js/hs.core.js"></script>
+  <script src="/assets/js/components/hs.header.js"></script>
+  <script src="/assets/js/components/hs.unfold.js"></script>
+  <script src="/assets/js/components/hs.malihu-scrollbar.js"></script>
+  <script src="/assets/js/components/hs.validation.js"></script>
+  <script src="/assets/js/components/hs.focus-state.js"></script>
+  <script src="/assets/js/components/hs.show-animation.js"></script>
+  <script src="/assets/js/components/hs.svg-injector.js"></script>
+  <script src="/assets/js/components/hs.go-to.js"></script>
+
+  <!-- JS Plugins Init. -->
+  <script>
+
+
+    $(function(){
+        $("#header").load("../header.html");
+        $("#footer").load("../footer.html");
+
+
+      $("#table-of-contents").load("table-of-contents-installation.html");
+
+    });
+
+
+    $(window).on('load', function () {
+      // initialization of HSMegaMenu component
+      $('.js-mega-menu').HSMegaMenu({
+        event: 'hover',
+        pageContainer: $('.container'),
+        breakpoint: 767.98,
+        hideTimeOut: 0
+      });
+
+      // initialization of svg injector module
+      $.HSCore.components.HSSVGIngector.init('.js-svg-injector');
+    });
+
+    $(document).on('ready', function () {
+      // initialization of header
+      $.HSCore.components.HSHeader.init($('#header'));
+
+      // initialization of unfold component
+      $.HSCore.components.HSUnfold.init($('[data-unfold-target]'), {
+        afterOpen: function () {
+          $(this).find('input[type="search"]').focus();
+        }
+      });
+
+      // initialization of malihu scrollbar
+      $.HSCore.components.HSMalihuScrollBar.init($('.js-scrollbar'));
+
+      // initialization of show animations
+      $.HSCore.components.HSShowAnimation.init('.js-animation-link');
+
+      // initialization of form validation
+      $.HSCore.components.HSValidation.init('.js-validate', {
+        rules: {
+          confirmPassword: {
+            equalTo: '#signupPassword'
+          }
+        }
+      });
+
+      // initialization of forms
+      $.HSCore.components.HSFocusState.init();
+
+      // initialization of go to
+      $.HSCore.components.HSGoTo.init('.js-go-to');
+    });
+  </script>
+</body>
+</html>

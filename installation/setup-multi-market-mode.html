@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-92673120-3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-92673120-3');
+    </script>
+
+
+    <!-- Title -->
+  <title>Nearby Shops | Developer : Installation Guide</title>
+
+  <!-- Required Meta Tags Always Come First -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="favicon.ico">
+
+  <!-- Google Fonts -->
+  <link href="//fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+
+  <!-- CSS Implementing Plugins -->
+  <link rel="stylesheet" href="/assets/vendor/font-awesome/css/fontawesome-all.min.css">
+  <link rel="stylesheet" href="/assets/vendor/animate.css/animate.min.css">
+  <link rel="stylesheet" href="/assets/vendor/hs-megamenu/src/hs.megamenu.css">
+  <link rel="stylesheet" href="/assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css">
+  <link rel="stylesheet" href="/assets/vendor/cubeportfolio/css/cubeportfolio.min.css">
+
+
+  <link rel="stylesheet" href="/assets/vendor/jquery-ui/themes/base/jquery-ui.min.css">
+  <link rel="stylesheet" href="/assets/vendor/prism/prism.css">
+
+
+
+  <!-- CSS Front Template -->
+  <link rel="stylesheet" href="/assets/css/theme.css">
+
+  <link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css"/>
+
+
+
+  <!-- CSS Front Doc -->
+  <link rel="stylesheet" href="/assets/css/starter.css">
+
+
+  <style>
+
+    p{
+      color: #0a0a0a;
+      font-family:Helvetica Neue, Helvetica, Arial, sans-serif;
+    }
+
+
+    /*font-family: "Helvetica Neue", Arial, sans-serif;*/
+
+    h2{
+      color: orange;
+      font-weight: normal;
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+
+    h3{
+      color: green;
+      font-weight: lighter;
+      font-size: larger;
+    }
+
+
+
+  </style>
+
+
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+
+
+  <div id="header"></div>
+
+
+  <!-- ========== MAIN ========== -->
+  <main id="content" role="main">
+    <!-- Search Section -->
+    <div class="gradient-half-primary-v1">
+      <div class="bg-img-hero-center" style="background-image: url(/assets/svg/components/bg-elements-10.svg);">
+        <div class="container space-1">
+          <div class="d-inline-block">
+            <a href="installation-guide.html" data-toc-skip class="h5 text-white">Installation</a>
+            <a data-toc-skip class="h5 text-white font-size-2 font-weight-light ml-2 mr-2">/</a>
+            <a href="installation-guide.html" data-toc-skip class="h5 text-white font-weight-normal">Installation Guide</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Search Section -->
+
+
+    <div class="container-fluid pl-3 pr-3">
+      <div class="row">
+
+        <div class="col-lg-3 col-12 pl-5 text-center d-inline-block">
+          <div id="table-of-contents" class="sticky-top"></div>
+        </div>
+
+
+      <!-- main content area -->
+      <div class="col-lg-6">
+
+
+          <!-- Article Section -->
+          <div class="space-bottom-2">
+            <div class="">
+
+
+
+              <!-- Article -->
+              <div class="card shadow-sm p-lg-7 p-4">
+                <h2>Submit your Instance to Market Aggregators</h2>
+<!--                <p class="font-size-2">In this article we will learn how to install Nearby Shops backend on Digital O</p>-->
+
+
+
+
+
+                  <h3 >Steps for Submission to Market Aggregator</h3>
+                  <p>1. Submit to Nearby Shops Market Aggregator</br>
+                      2. Submit your app to Other Market Aggregator's</p>
+
+
+
+                  <h3>Concepts</h3>
+                  <p>Nearby Shops single-market mode and multi-market mode !</p>
+
+
+
+
+                  <h2 style="margin-top: 30px">Step 1 : Submit your Instance to Nearby Shops Market Aggregator</h2>
+
+
+                  <p>
+                      When you setup your instance to work in multi-market mode your local market becomes visible and accessible
+                      to the users of Nearby Shops mobile app platform.
+                      </br></br>
+                      In this way your market can benefit from the popularity and visibility of the Nearby Shops platform.
+                      And this can reduce your marketing budget and help you gain more audience for your local market free of cost.
+                      </br></br>
+                      Nearby Shops is a Nonprofit Open-Source Platform and we do not charge any fee to the service providers to get their market
+                      listed on our platform. Nearby Shops is free of cost for Service Providers.
+                      </br></br>
+                      Let us discuss how you can get your local market listed on Nearby Shops Platform. To get your Instance (Local Market) Listed
+                      on Nearby Shops platform. Please follow the instructions given below !
+                      </br></br>
+                      Step 1 : Go the the api_config.properties file
+                      </br></br>
+                  </p>
+
+
+
+
+                  <pre class="card bg-light align-content-start">
+                  <span class="fas fa-code p-3">   Code</span>
+                  <code class="border-top">
+    cd ~/nearbyshops
+    sudo nano api_config.properties
+                  </code>
+                    </pre>
+
+                  </br>
+                  <p>Step 2 : Add "http://sds.nearbyshops.org" to the trusted market aggregators
+                      </br>
+                      So after adding that to your api config file your api_config.properties file would look like !
+                  </p>
+
+                  </br>
+
+                  <pre class="card bg-light align-content-start">
+                  <span class="fas fa-code p-3">   Code </span>
+                  <code class="border-top">
+                      trusted_market_aggregators = http://sds.nearbyshops.org
+                  </code>
+                  </pre>
+
+                  <p>
+                      </br></br>
+                      Step 3 : Submit your Local Market !
+                      </br></br>
+                      Download the Nearby Shops end-user app from the homepage of <a href="http://nearbyshops.org">nearbyshops.org</a>
+                      </br>
+                      In this app go to the markets screen.
+                      </br></br>
+                      You will see the + button in the markets screen. When you press this button you will be asked to provide your market url and make
+                      a submission.
+<!--                      </br></br>-->
+<!--                      Your submission will be reviewed and approved after few hours.-->
+                  </p>
+
+
+
+<!--                  <h2 class="space-top-2 text-primary" style="margin-bottom: 0px">Optional Tasks</h2>-->
+
+
+
+                  <h2 style="margin-top: 30px">Step 2 : Submit your Instance to other market aggregators</h2>
+
+                  <p>
+                      Theoretically there could be many market aggregators. And technically it is possible for a service provider to submit their Instance
+                      to multiple market aggregators. Nearby Shops is just one of the many market aggregators.
+                      </br></br>
+                      you simply have to repeat the above procedure for different market aggregators.
+                      </br></br>
+                      Right now there isnt any other market aggregator but in future we may have ... or if you want to build one you can ...
+                      The tutorial for how to build a market aggregator will be provided !
+                      </br></br>
+                      We want to ensure that their is a level playing field and no vendor lock-in for service providers ... therefore all the
+                      technology will be made open-source.
+                  </p>
+
+
+
+
+
+
+
+                  <h2 class="space-top-2 text-primary" style="margin-bottom: 0px">Concepts</h2>
+
+
+                  <h2 style="margin-top: 30px">Nearby Shops Multi-Market mode and Single-Market Mode</h2>
+
+
+                  <p>
+                      Nearby Shops mobile app can be setup in compile time to work in one of the two different modes.
+                      One is single-market mode and another is multi-market mode. In the Single market mode
+                      the app is configured to access only a single market. But in multi-market mode the app is configured
+                      to access more than one local market each self-hosted by a different service provider.
+                      </br></br>
+                      In multi-market mode the user can see the list of multiple local markets available at his location
+                      and he can select and shop using any local market out the many available markets.
+                      </br></br>
+                      Both multi-market mode and single market mode has their own pros and cons. While single market mode can give you more
+                      independence and autonomy but will require a higher marketing budget. While in multi-market mode your market will benefit from
+                      the popularity of the platform and will get free of cost marketing and audience for your app.
+                      </br></br>
+                      Moreover in multi-market mode it is easier to setup, maintain and update the app. While in single -market mode it gets
+                      a little more complicated to keep your code in sync with the original codebase and update your app.
+                      </br></br>
+                      To get a better understanding let us see another example.
+                      A single-market mode is like a wordpress website designed for single publication.
+                      While multi-market mode is like medium.com website. Medium.com is a single platform
+                      that contains many different publications.
+                      </br></br>
+
+
+                      Wordpress Website = Single Publication = (similar to) Single-Market Mode
+                      </br></br>
+                      Medium Platform = Multiple Publications = (similar to) Multi-Market Mode
+                      </br></br>
+
+
+
+                      </br></br>
+                      You can setup your instance in 3 different ways.
+                      </br></br>
+                      1. Single-market Mode : Your instance is configured to work Only in Single-Market mode
+                      </br></br>
+                      2. Multi-Market Mode : Your instance is configured to work Only in Multi-market Mode
+                      </br></br>
+                      3. Dual Mode : Your instance is configured to work in both single-market mode and multi-market mode simultaneously
+                      </br></br>
+
+
+                      In the following part of his tutorial we will see how we can setup your
+                      instance to work in all the above mentioned modes.
+
+                  </p>
+
+
+
+
+                  <p class="border-top space-top-2 font-size-2 font-weight-light">
+                      Facing difficulty in understanding ? ... let us know !
+                      If you have any questions and queries feel free to get in touch with us on our
+                      <a href="http://forum.nearbyshops.org">forum</a>
+                  </p>
+
+
+
+
+              </div>
+              <!-- End Article -->
+
+
+
+            </div>
+          </div>
+          <!-- End Article Section -->
+
+      </div>
+
+
+
+        <!-- sidebar, which will move to the top on a small screen -->
+        <div class="col-lg-3">
+
+          <nav id="toc" data-toggle="toc" class="sticky-top space-2 font-size-5">
+            <p class="font-weight-light ml-3 text-primary font-size-2">On this page</p>
+          </nav>
+        </div>
+
+
+      </div>
+    </div>
+  </main>
+  <!-- ========== END MAIN ========== -->
+
+
+
+
+  <div id="footer"></div>
+
+
+
+  <!-- Go to Top -->
+  <a class="js-go-to u-go-to" href="#"
+    data-position='{"bottom": 15, "right": 15 }'
+    data-type="fixed"
+    data-offset-top="400"
+    data-compensation="#header"
+    data-show-effect="slideInUp"
+    data-hide-effect="slideOutDown">
+    <span class="fas fa-arrow-up u-go-to__inner"></span>
+  </a>
+  <!-- End Go to Top -->
+
+  <!-- JS Global Compulsory -->
+  <script src="/assets/vendor/jquery/dist/jquery.min.js"></script>
+  <script src="/assets/vendor/jquery-migrate/dist/jquery-migrate.min.js"></script>
+  <script src="/assets/vendor/popper.js/dist/umd/popper.min.js"></script>
+  <script src="/assets/vendor/bootstrap/bootstrap.min.js"></script>
+
+  <!-- add after bootstrap.min.js -->
+  <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+
+
+
+  <!-- JS Implementing Plugins -->
+  <script src="/assets/vendor/hs-megamenu/src/hs.megamenu.js"></script>
+  <script src="/assets/vendor/svg-injector/dist/svg-injector.min.js"></script>
+  <script src="/assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="/assets/vendor/jquery-validation/dist/jquery.validate.min.js"></script>
+
+  <!-- JS Front -->
+  <script src="/assets/js/hs.core.js"></script>
+  <script src="/assets/js/components/hs.header.js"></script>
+  <script src="/assets/js/components/hs.unfold.js"></script>
+  <script src="/assets/js/components/hs.malihu-scrollbar.js"></script>
+  <script src="/assets/js/components/hs.validation.js"></script>
+  <script src="/assets/js/components/hs.focus-state.js"></script>
+  <script src="/assets/js/components/hs.show-animation.js"></script>
+  <script src="/assets/js/components/hs.svg-injector.js"></script>
+  <script src="/assets/js/components/hs.go-to.js"></script>
+
+  <!-- JS Plugins Init. -->
+  <script>
+
+
+    $(function(){
+        $("#header").load("../header.html");
+        $("#footer").load("../footer.html");
+
+
+      $("#table-of-contents").load("table-of-contents-installation.html");
+
+    });
+
+
+    $(window).on('load', function () {
+      // initialization of HSMegaMenu component
+      $('.js-mega-menu').HSMegaMenu({
+        event: 'hover',
+        pageContainer: $('.container'),
+        breakpoint: 767.98,
+        hideTimeOut: 0
+      });
+
+      // initialization of svg injector module
+      $.HSCore.components.HSSVGIngector.init('.js-svg-injector');
+    });
+
+    $(document).on('ready', function () {
+      // initialization of header
+      $.HSCore.components.HSHeader.init($('#header'));
+
+      // initialization of unfold component
+      $.HSCore.components.HSUnfold.init($('[data-unfold-target]'), {
+        afterOpen: function () {
+          $(this).find('input[type="search"]').focus();
+        }
+      });
+
+      // initialization of malihu scrollbar
+      $.HSCore.components.HSMalihuScrollBar.init($('.js-scrollbar'));
+
+      // initialization of show animations
+      $.HSCore.components.HSShowAnimation.init('.js-animation-link');
+
+      // initialization of form validation
+      $.HSCore.components.HSValidation.init('.js-validate', {
+        rules: {
+          confirmPassword: {
+            equalTo: '#signupPassword'
+          }
+        }
+      });
+
+      // initialization of forms
+      $.HSCore.components.HSFocusState.init();
+
+      // initialization of go to
+      $.HSCore.components.HSGoTo.init('.js-go-to');
+    });
+  </script>
+</body>
+</html>

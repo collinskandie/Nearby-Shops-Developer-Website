@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-92673120-3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-92673120-3');
+    </script>
+
+
+
+    <!-- Title -->
+  <title>Nearby Shops | Developer : Customize apps</title>
+
+  <!-- Required Meta Tags Always Come First -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="favicon.ico">
+
+  <!-- Google Fonts -->
+  <link href="//fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+
+  <!-- CSS Implementing Plugins -->
+  <link rel="stylesheet" href="../assets/vendor/font-awesome/css/fontawesome-all.min.css">
+  <link rel="stylesheet" href="../assets/vendor/animate.css/animate.min.css">
+  <link rel="stylesheet" href="../assets/vendor/hs-megamenu/src/hs.megamenu.css">
+  <link rel="stylesheet" href="../assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css">
+  <link rel="stylesheet" href="../assets/vendor/cubeportfolio/css/cubeportfolio.min.css">
+
+
+  <link rel="stylesheet" href="../assets/vendor/jquery-ui/themes/base/jquery-ui.min.css">
+  <link rel="stylesheet" href="../assets/vendor/prism/prism.css">
+
+
+
+  <!-- CSS Front Template -->
+  <link rel="stylesheet" href="../assets/css/theme.css">
+
+  <link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css"/>
+
+
+
+  <!-- CSS Front Doc -->
+  <link rel="stylesheet" href="../assets/css/starter.css">
+
+
+  <style>
+
+    p{
+      color: #0a0a0a;
+      font-family:Helvetica Neue, Helvetica, Arial, sans-serif;
+    }
+
+
+    /*font-family: "Helvetica Neue", Arial, sans-serif;*/
+
+    h2{
+      color: orange;
+      font-weight: normal;
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+
+    h3{
+      color: green;
+      font-weight: lighter;
+      font-size: larger;
+    }
+
+
+
+  </style>
+
+
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+
+
+  <div id="header"></div>
+
+
+  <!-- ========== MAIN ========== -->
+  <main id="content" role="main">
+    <!-- Search Section -->
+    <div class="gradient-half-primary-v1">
+      <div class="bg-img-hero-center" style="background-image: url(../assets/svg/components/bg-elements-10.svg);">
+        <div class="container space-1">
+          <div class="d-inline-block">
+            <a href="installation-guide.html" data-toc-skip class="h5 text-white">Installation</a>
+            <a data-toc-skip class="h5 text-white font-size-2 font-weight-light ml-2 mr-2">/</a>
+            <a href="#" data-toc-skip class="h5 text-white font-weight-normal">Customize apps</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Search Section -->
+
+
+
+    <div class="container-fluid pl-3 pr-3">
+      <div class="row">
+
+        <div class="col-lg-3 col-12 pl-5 text-center d-inline-block">
+          <div id="table-of-contents" class="sticky-top"></div>
+        </div>
+
+
+      <!-- main content area -->
+      <div class="col-lg-6">
+
+
+          <!-- Article Section -->
+          <div class="space-bottom-2">
+            <div class="">
+
+
+
+
+              <!-- Article -->
+              <div class="card shadow-sm p-lg-7 p-4">
+                <h2 >Customize android App</h2>
+                <p class="font-size-2">In this article we will learn how to customize Nearby Shops android apps</p>
+
+
+
+                <h3>Prerequisite Knowledge</h3>
+                  <p>
+                  To understand this guide you dont need to be an expert but basic knowledge of android studio and java will help you.
+                      Even if you dont have this knowledge you can always hire an android developer and ask them to do this for you.
+                      Its is recommended that you learn it which is really easy so that you can update the app yourself. 
+                  </p>
+
+
+                  
+                 <p class="font-size-2"><a href="https://nearbyshops.org/pricing.html">Buy License</a></p>
+
+
+                  <div class="alert alert-warning p-4 mb-5" role="alert">
+
+                    <h3><span class="fas fa-ambulance font-size-2 mt-1 mr-3"></span>Warning for Commercial Use !</h3>
+                    <p>
+                      Warning ! Commercial Use of our white label app requires commercial license. Commercial use without permission or commercial license will 
+                      be considered copyright violation. 
+                    </p>
+
+                 </div>
+
+
+
+
+
+                  <h3>Connect your app with your Instance</h3>
+                  <p>
+                  To connect the app with your instance. Clone our android app repository. Then open it with latest stable 
+                  release of android studio. And search for file "PrefGeneral.java" in the preferences folder. 
+                  Set multi market mode to false and set default service url equal to your instance domain name.
+                </p>
+
+
+
+
+                  <h3 >Steps for Customization</h3>
+
+                    <p>
+                        1. Change app Package name</br>
+                        2. Change API Server URL and set multi-market mode to false</br>
+                        3. Change brand name and logo</br>
+                        4. Change color scheme</br>
+                        5. Change empty screen graphics (optional)</br>
+                        6. Setup Third Party Integrations</br>
+                        7. Setup website links
+                    </p>
+
+
+
+
+
+                <p class="border-top space-1">Let us begin the step by step guide for how to customize your android apps</p>
+
+
+
+
+
+                  <h2 >Step 1 : Change app Package name</h2>
+
+
+                  <p >
+                      If you want to publish your app on the google play store. You must be aware that each app needs to have a unique package name because on google play store
+                      the app's package name acts as a unique identifier for the app.
+                      </br></br>
+                      To ensure that you have a unique package name we recommend that you purchase a domain name and be an owner of that domain name.
+                      And use that domain name as a package name for your app.
+                      This is not a mandatory step but its a best recommended practice to ensure that your package name remains unique so that
+                      you dont face legal hurdles and issues in future.
+                      </br></br>
+                      Given below are some really good tutorials on how to change your package name and they are good enough to give you an idea
+                      for how you can change your package name.
+                      </br></br>
+
+                      <a href="https://stackoverflow.com/questions/16804093/rename-package-in-android-studio">
+                          https://stackoverflow.com/questions/16804093/rename-package-in-android-studio
+                      </a>
+
+                      </br></br>
+
+                      <a href="https://abhiandroid.com/androidstudio/how-to-change-package-name-android-studio.html">
+                          https://abhiandroid.com/androidstudio/how-to-change-package-name-android-studio.html
+                      </a>
+
+                      </br></br>
+                      You can just see more of such tutorials by typing "change package name android" on any of your favourite search engine.
+                      </br></br>
+
+                      If this is not sufficient and you're still unable to do this step feel free to get in touch with the community at our forum.
+                  </p>
+
+
+
+
+                  <h2 >Step 2 : Connect your app to your Instance</h2>
+
+
+                  <p >
+                      To connect the app with your instance. Search for file "PrefGeneral.java" in the preferences folder. 
+                      Set multi market mode to false and set default service url equal to your instance domain name.                    
+                  </p>
+
+
+
+                  
+
+                  <h2 >Step 3 : Change Brand name and Logo</h2>
+
+
+                  <p>
+                      Having your own brand name is good for you also because you get to create your own distinct brand image according to what suits you.
+                      To change your app name and you need to look for strings.xml file in the android app project. This file contains a
+                      string with name "app_name". Here you can put your own app name.
+                      <br><br>
+                      To change your brand logo. save your logo into the drawable folder and then go to manifest.xml file ... look for icon attribute
+                      and change it to point to your own brand logo.
+                      <br><br>
+                      If you face any problem feel free to get in touch with us on our
+                      <a href="http://forum.nearbyshops.org">forum.</a>
+                  </p>
+
+
+
+
+
+
+                  <h2 >Step 4 : Change Color scheme</h2>
+
+
+                  <p>
+                      You can define your own color scheme for the app and choose your colors according to what you like and what suits you the best.
+                      You need to provide three colors. Color primary, color primary dark and color secondary.
+                      These are the theme colors for the android app.
+
+                      You can choose your colors from
+                      <a href="https://www.materialpalette.com/">
+                          https://www.materialpalette.com/
+                      </a>.
+                      This is a very good website which can help you choose your colors for your app.
+                      <br><br>
+                      You can define your custom color scheme in your style.xml file.
+                  </p>
+
+
+
+                  <h2 >Step 5 : Custom graphics and Illustrations</h2>
+
+                  <p>
+                      You can use your own custom graphics and illustrations in your app. Whenever you feel appropriate.
+                  </p>
+
+
+                  
+
+                  <h2 >Step 6: Setup third party integrations</h2>
+
+                  <p>
+                     You might need to setup Push Notifications and Maps by setting API Keys in the android app. The instructions for these integrations 
+                     are provided in the Integrations Section. 
+                  </p>
+
+
+
+                  <h2 >Step 7 : Setup links to website, terms of service and privacy policy</h2>
+
+                  <p>
+                      Google Play requires your app to have a mandatory Terms of Service and Privacy Policy. 
+                      Make sure to put your own custom links.
+                      Search for String.xml and in the file set the value of tos_link and privacy_policy_link to the respective URLs
+                  </p>
+
+
+              </div>
+              <!-- End Article -->
+
+
+
+            </div>
+          </div>
+          <!-- End Article Section -->
+
+      </div>
+
+
+
+        <!-- sidebar, which will move to the top on a small screen -->
+        <div class="col-lg-3">
+
+          <nav id="toc" data-toggle="toc" class="sticky-top space-2 font-size-5">
+            <p class="font-weight-light ml-3 text-primary font-size-2">On this page</p>
+          </nav>
+        </div>
+
+
+      </div>
+    </div>
+  </main>
+  <!-- ========== END MAIN ========== -->
+
+
+
+
+  <div id="footer"></div>
+
+
+
+  <!-- Go to Top -->
+  <a class="js-go-to u-go-to" href="#"
+    data-position='{"bottom": 15, "right": 15 }'
+    data-type="fixed"
+    data-offset-top="400"
+    data-compensation="#header"
+    data-show-effect="slideInUp"
+    data-hide-effect="slideOutDown">
+    <span class="fas fa-arrow-up u-go-to__inner"></span>
+  </a>
+  <!-- End Go to Top -->
+
+  <!-- JS Global Compulsory -->
+  <script src="../assets/vendor/jquery/dist/jquery.min.js"></script>
+  <script src="../assets/vendor/jquery-migrate/dist/jquery-migrate.min.js"></script>
+  <script src="../assets/vendor/popper.js/dist/umd/popper.min.js"></script>
+  <script src="../assets/vendor/bootstrap/bootstrap.min.js"></script>
+
+  <!-- add after bootstrap.min.js -->
+  <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+
+
+
+  <!-- JS Implementing Plugins -->
+  <script src="../assets/vendor/hs-megamenu/src/hs.megamenu.js"></script>
+  <script src="../assets/vendor/svg-injector/dist/svg-injector.min.js"></script>
+  <script src="../assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script src="../assets/vendor/jquery-validation/dist/jquery.validate.min.js"></script>
+
+  <!-- JS Front -->
+  <script src="../assets/js/hs.core.js"></script>
+  <script src="../assets/js/components/hs.header.js"></script>
+  <script src="../assets/js/components/hs.unfold.js"></script>
+  <script src="../assets/js/components/hs.malihu-scrollbar.js"></script>
+  <script src="../assets/js/components/hs.validation.js"></script>
+  <script src="../assets/js/components/hs.focus-state.js"></script>
+  <script src="../assets/js/components/hs.show-animation.js"></script>
+  <script src="../assets/js/components/hs.svg-injector.js"></script>
+  <script src="../assets/js/components/hs.go-to.js"></script>
+
+  <!-- JS Plugins Init. -->
+  <script>
+
+
+    $(function(){
+        $("#header").load("../header.html");
+        $("#footer").load("../footer.html");
+
+
+      $("#table-of-contents").load("table-of-contents-installation.html");
+
+    });
+
+
+    $(window).on('load', function () {
+      // initialization of HSMegaMenu component
+      $('.js-mega-menu').HSMegaMenu({
+        event: 'hover',
+        pageContainer: $('.container'),
+        breakpoint: 767.98,
+        hideTimeOut: 0
+      });
+
+      // initialization of svg injector module
+      $.HSCore.components.HSSVGIngector.init('.js-svg-injector');
+    });
+
+    $(document).on('ready', function () {
+      // initialization of header
+      $.HSCore.components.HSHeader.init($('#header'));
+
+      // initialization of unfold component
+      $.HSCore.components.HSUnfold.init($('[data-unfold-target]'), {
+        afterOpen: function () {
+          $(this).find('input[type="search"]').focus();
+        }
+      });
+
+      // initialization of malihu scrollbar
+      $.HSCore.components.HSMalihuScrollBar.init($('.js-scrollbar'));
+
+      // initialization of show animations
+      $.HSCore.components.HSShowAnimation.init('.js-animation-link');
+
+      // initialization of form validation
+      $.HSCore.components.HSValidation.init('.js-validate', {
+        rules: {
+          confirmPassword: {
+            equalTo: '#signupPassword'
+          }
+        }
+      });
+
+      // initialization of forms
+      $.HSCore.components.HSFocusState.init();
+
+      // initialization of go to
+      $.HSCore.components.HSGoTo.init('.js-go-to');
+    });
+  </script>
+</body>
+</html>
