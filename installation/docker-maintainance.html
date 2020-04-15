@@ -122,7 +122,7 @@
 
               <!-- Article -->
               <div class="card shadow-sm p-lg-7 p-4">
-                <h2 >Quick Installation Using Docker</h2>
+                <h2 >Docker Maintainaince</h2>
                 <p class="font-size-2">
                 </p>
 
@@ -130,118 +130,93 @@
 
                 <h3>Prerequisite Knowledge</h3>
                 <p>
-                  This installation guide is simple enough.
-                  Even if you have just the basic knowledge of how to browse web and use computers that is sufficient. 
-                  There are things which you may need to learn but you can learn them easily. 
+                  If you are familier with using linux terminal commands that would be sufficient. 
                 </p>
 
-                  
-                <p>
-                  If you dont know anything about docker and cloud hosting dont worry. Just follow our stepwise procedure and you will get through. 
-                </p>
-
-
-                <p>
-                  If you are completely new to Cloud hosting then you can learn it in just few minutes with these simple tutorials.
-                </br></br>
-                  <a href="https://www.digitalocean.com/docs/droplets/how-to/create/">https://www.digitalocean.com/docs/droplets/how-to/create/</a>
-
-                </br>
-                  <a href="https://www.digitalocean.com/docs/droplets/how-to/connect-with-ssh/">https://www.digitalocean.com/docs/droplets/how-to/connect-with-ssh/</a>
-                  
-                </p>
-
-
-
-                <p>
-                  We assume some familiarity with Ubuntu terminal commands and cloud hosting. If you completely new to this
-                  you can follow tutorials like these
-                </p>
-
-
-                <p>
-                  <a href="http://www.linuxandubuntu.com/home/10-basic-linux-commands-that-every-linux-newbies-should-remember">
-                    http://www.linuxandubuntu.com/home/10-basic-linux-commands-that-every-linux-newbies-should-remember</a>
-                </p>
-
-
-          
 
                 
-                <h3 >Steps for Installation</h3>
+                <h3>Why this topic ?</h3>
+                <p> 
+                  In this tutorial we will study the common maintainaince procedures you need to follow in order to maintain your server installed using Docker. 
+                </p>
 
-                <p>Step 1: Install docker and docker compose</br>
-                  Step 2: Download Docker file and run it</br>
-                  Step 3 : Assign a Domain name</br>
-                  Step 4 : Enter container and update instance configuration</br>
-                  Step 5 : Publish your app on Google Play (Optional)</br>
-                  Step 6 : Submit your market to Nearby Shops (Optional)</br>
-                  Step 7 : Login as admin and update Market Configuration
+
+      
+                <h3 >Topics Covered</h3>
+
+                <p>Upgrading / Updating your Backend Instance</br>
+                    Enable Remote access to your Database</br>
+                    Run multiple Instances on One Server</br>
+                    Backup and Restore your Instance Data
                 </p>
 
                 
 
 
 
-                <p  class="border-top space-1">
-                  For simplicity and ease of Installation we recommend Digital Ocean. To keep things simple you can create a new Droplet 
-                  using One Click Docker Image given here 
+
+                <h2>Upgrading / Updating your Backend Instance</h2>
+
                 
-                  <a href="https://marketplace.digitalocean.com/apps/docker">https://marketplace.digitalocean.com/apps/docker</a> 
-                
-                  This image comes with Docker preinstalled. 
+                <p>Every Software needs to be updated. And you will need to update your server too. In this tutorial we will see
+                  how to update your server instance installed using docker. 
                 </p>
 
 
-                <p> Please Note : 
-                  We recommend Digital Ocean for simplicity but you can use any other cloud hosting platform. 
-                  We are assuming that you are installing on a ubuntu based cloud server with an IP address & internet access. 
-                </p>
-
-
-
-                <h2 >Step 1: Install docker and docker compose</h2>
-
-                <p>If you already have docker preinstalled then you can skip this step.</p>
-              
                 <p>
-                  If you dont have latest version of docker and docker compose please install them using the following official installation guides.
-                  <br><br>
-Install the latest version of docker using this link <a href="https://docs.docker.com/install/linux/docker-ce/ubuntu/">https://docs.docker.com/install/linux/docker-ce/ubuntu/</a>
-<br>
-Install the latest version of docker Compose using this link <a href="https://docs.docker.com/compose/install/">https://docs.docker.com/compose/install/</a>
+                  Please note when you upgrade / update your docker container all your data will be deleted except for your data stored
+                  in <b>~/nearbyshops/data</b> folder and data stored in PostgreSQL database. 
+                  So before updating your server please ensure that you dont have any important data stored outside of these folders. 
                 </p>
 
-
-
-
-                <h2>Step 2: Download Docker Compose file and run it</h2>
-
-
-                <p>Download the docker compose file and run it.</p>
+                <p>
+                  To update your docker container use the following commands. 
+                </p>
 
 
                 <pre class="card bg-light align-content-start">
                   <span class="fas fa-code p-3">   Commands</span>
                   <code class="border-top">
-    cd ~
-    mkdir nearbyshops
-    cd nearbyshops
 
-    wget https://raw.githubusercontent.com/NearbyShops/Nearby-Shops-API/master/docker-compose.yml
+    docker-compose down
+    (please ensure that you are inside the directory where docker-compose.yml resides)
+
+    docker rmi nearbyshops/nearbyshops:latest --force
 
     docker-compose up
-
-    (Exit container using Ctrl + C or Ctrl + Z  ... If nothing works close the terminal window & start a new terminal)
-      </code>
+                </code>
                 </pre>
 
 
 
 
+                <p>
+                   After you do docker-compose up it will download the new docker image and create a container out of that new image. Your data stored 
+                   in <b>~/nearbyshops/data</b> folder and data stored in PostgreSQL database will be preserved. 
+                </p>
 
 
-                <p>This is optional. You can also edit the docker-compose.yml file and change the settings like port number, container name to suit your needs.</p>
+
+
+
+                <h2>Enable Remote access to your Database</h2>
+
+
+                <p>We use PostgreSQL as our primary Database. Sometimes you may need / want to have direct access to your Database.
+                    This need can arise due to various reasons. 
+                    You may want to make some update in the database which you are not able to do using the app. 
+                    You may want to analyze the database and do some research on your data. 
+                    There could be many other reasons. 
+                </p>
+
+
+                <p>
+                  To enable access to your Database of your Server follow these instructions. 
+                </p>
+
+                <p>
+                  Open your docker-compose.yml file using a text editor
+                </p>
 
 
                 <pre class="card bg-light align-content-start">
@@ -252,78 +227,45 @@ Install the latest version of docker Compose using this link <a href="https://do
                 </pre>
 
 
+
                 <p>
-                  <span class="fas fa-arrow-right"> Verify Successful Execution</span> : In order to verify and test that we have a successful connection to the Api Server.
-                  We will test the endpoints to see if we get any result. 
-
+                  Add  - "5432:5432" to the ports section of docker-compose.yml file. 
+                  <br><br>
+                  After making an update to your docker-compose.yml file your 
+                  docker compose file will look 
+                  something like the file given below. Please note the addition of new line in the ports section. 
+                  This tells docker to enable access to the port 5432 from the outside world. 5432 is the default port on 
+                  which the PostgreSQL Database works. And for our installation also 5432 is the port which we use for PostgreSQL Database. 
                 </p>
-                  
-                <p>
-                  Before testing the endpoints please ensure that your container is running. 
-                </p>
 
 
-                
+
+
                 <pre class="card bg-light align-content-start">
-                  <span class="fas fa-code p-3">  Terminal Commands</span>
+                  <span class="fas fa-code p-3">  Optional Commands</span>
                   <code class="border-top">
-
-    docker-compose start
-    (please ensure that you are inside the directory where docker-compose.yml resides)
-
-    OR 
-
-    docker start nbs_api_container     
+    version: '3.6'
+    services:
+      nbs_api:
+        image: nearbyshops/nearbyshops
+        ports:
+          - "80:80"
+          - "5432:5432"
+        container_name: nbs_api_container
+        volumes:
+          - db_data:/var/lib/postgresql/12/main
+          - api_data:/root/nearbyshops/data
+        restart: always
+        entrypoint: ["/root/nbs.sh"]                    
                 </code>
                 </pre>
 
-                  
-               
-                  
-                <p>
-                  The url for the endpoint is
-                  <br>
-                  <span class="text-indigo font-weight-bold"> [IP:port]/api/ServiceConfiguration</span>
-                  <br>
-                  Replace the IP and port number according to your installation. For example if your IP address is <b>139.59.81.21</b> and port number is <b>80</b>
-
-                  you can type some like <span class="text-indigo font-weight-bold"> 139.59.81.21/api/ServiceConfiguration</span> in URL of Firefox browser.
-
-                  When you execute this url in your firefox browser you should see some text json output.
-                  <br>
-                  Having the output verifies successful execution.
-              </p>
 
 
-                
+                <p>By default PostgreSQL is configured to be accessed only internally on a local server. This is done for Security Reasons. 
+                   You need to change the PostgreSQL configuration settings in order to allow the database access from a Remote Computer or Say outside world.  
+                   In order to accomplish this we need to get inside our container and follow a prodecure</p>
 
-                <h2>Step 3 : Assign a Domain name</h2>
-
-
-                <p>IP addresses can change and are not stable. For stable and long term access to your instance it is always a good idea to assign a domain name to your server. 
-                  Based on the hosting provider you are using you have to follow their respective methods.
-
-                </p>
-
-                <p>
-                  If you are completely new to clould hosting and dont know how to assign a domain name. Then follow these tutorials
-                  <a href="https://www.youtube.com/watch?v=7itQ-AXiM5o">https://www.youtube.com/watch?v=7itQ-AXiM5o</a>
-                </br></br>
-                  <a href="https://www.digitalocean.com/community/tutorials/how-to-point-to-digitalocean-nameservers-from-common-domain-registrars">https://www.digitalocean.com/community/tutorials/how-to-point-to-digitalocean-nameservers-from-common-domain-registrars</a>
-                </p>
-
-
-
-                <h2>Step 4 : Enter container and update instance configuration</h2>
-
-
-                <p>
-                  You need to change few api configuration settings like domain name & admin email to ensure that you are able to 
-                  access your market Instance.
-                  <br><br>
-                  Enter your container and update api configuration.
-                </p>
-                
 
 
                 <pre class="card bg-light align-content-start">
@@ -333,164 +275,127 @@ Install the latest version of docker Compose using this link <a href="https://do
     docker-compose start
     (please ensure that you are inside the directory where docker-compose.yml resides)
 
-    OR 
-
-    docker start nbs_api_container 
-    
-
-
     docker exec -it nbs_api_container bash
 
-    cd ~/nearbyshops/data 
-    
-    sudo nano api_config.properties
-
-    (Save and Exit using Ctrl + X)
     (Exit container using Ctrl + C or Ctrl + D)
                 </code>
                 </pre>
 
 
-
-                <h4>Things to Update</h4>
-                <li>Admin Email</li>
-                <li>Domain Name</li>
-                <li>Market ID for FCM</li>
-
-
-                <p class="mt-3">
-                  <b>admin_email</b>
-                   is the field name. Admin email is the email of the market admin. 
-                   Without providing this you wont be able to access your market and change settings.</p>
-
-                <p>
-                  <b>domain_name</b>
-                  is the field name and you need to set this equal to your domain name
-                </p>
-                
-                <p>
-                  <b>market_id_for_fcm</b>
-                  is the field name. It should be some unique id that uniquely identifies your market. It is used to enable push notifications.
+                <p>After getting inside the Docker Container please follow the prodecure given in this guide. 
+                   <a href="/database/enable-remote-access-to-postgres.html">Enable Remote Access to PostgreSQL</a>
                 </p>
 
 
 
 
-                <p>
-                  <b>Setup Email and SMS (Can be skipped and Done later also)</b>
-              
-                    Email and SMS are required for sending live order status updates to the customers. They are also used for login purposes. 
-                    The Email and SMS setup instructions are provided in our <a href="../integrations/e-mail-integration.html">Integrations guide.</a>
-                  </br></br>
-                    You can skip Email and SMS setup and do this later also. 
-                </p>
-
-
-                <p>Everytime you make a change in the configuration file you need to restart the server in order to ensure that changes are 
-                  reflected.
-                </p>
 
 
                 <pre class="card bg-light align-content-start">
-                  <span class="fas fa-code p-3">  Commands : Restart Container</span>
+                  <span class="fas fa-code p-3">   Commands</span>
                   <code class="border-top">
+    (Exit container using Ctrl + C or Ctrl + D)
 
     docker-compose restart
     (please ensure that you are inside the directory where docker-compose.yml resides)
-
-    OR
-  
-    docker stop nbs_api_container
-
-    docker start nbs_api_container
-
                 </code>
                 </pre>
 
 
+                <p>Exit container after following above procedure. And then restart the container to apply the changes.</p>
+
+                <p>After following the above procedure you can connect to your database using PGadmin4 database utility. 
+                  Install PGAdmin4 and add a new server with host ip and database user and password given in your api_config.properties file. </p>
 
 
 
+                <h2>Run multiple Instances on One Server</h2>
 
 
-                <h2>Step 5 : Publish your app on Google Play (Optional)</h2>
-
-         
-                <p>You can customize our android app (White Label Solution) and connect the app to your Instance and publish to the Google Play. This is optional and isnt 
-                  mandatory. 
-                  <br><br>
-                  More information about how to customize your app and publish on Google Play is given in the article 
-                  
-                  <a href="./customize-apps.html">Customize apps.</a>
+                <p>Yes you can run multiple docker instances on one server. In order to run multiple instances you need to change and assign different 
+                  port for each instance. And you also need to change the container name such that each instance has different container name. 
                 </p>
 
-
-
-
-
-
-
-                
-                <!-- Your market gets free access to all the customers of nearby shops app.   -->
-
-                <!-- Nearby Shops is not just open-source but also Nonprofit. Its free and there is no need to pay any commission and Marketing fee.  -->
-                <!-- <br><br> -->
-                <!-- When you link / submit your market to nearby shops. Your market gets free access to all the customers of nearby shops app.  -->
-                <!-- <br><br> -->
-
-                <!-- Nearby Shops is free and open-source platform. There is no need to pay any commission and Marketing fee. 
-                  When you link / submit your market to nearby shops. Your market gets free access to all the customers of nearby shops app.
-                  <br><br>
-                  Download Nearby Shops android app from Google Play. Here you will find a + (plus) button on the markets screen. 
-                  Enter your market url (domain name) and make a submission. 
-                  <br><br>
-                  Please change your location to Bali, Indonesia. 
-                  Your newly setup market name could be Daily Supplies in Bali, Indonesia. In the next step we will see 
-                  how can you change the market name and other settings. -->
-
-
-
-                  <h2>Step 6 : Link your market to Local Market Aggregators (Optional)</h2>
 
                 <p>
-                  This is optional and isnt mandatory. 
-                  <br><br>
-                  You can link your website to Google and Bing to gain extra traffic for your website. Similarly 
-                  you can link your market to various local market Aggregators and gain free access
-                  to more customers. 
-                  <br><br>
-                  For linking your Market to Nearby Shops there is no Commission and Marketing fee. You can link to other 
-                  Local Market Aggregators also. 
-                  <br><br>
-                  You can also convert your app into a Local Market Aggregator if you run your app in the multi-market Mode. 
+                  The best practice is the create a different folder for each instance where you can download and edit the docker compose file for that instance.
                 </p>
 
 
 
-                <h2>Step 7 : Login as admin and update Market Configuration</h2>
+
+                <pre class="card bg-light align-content-start">
+                  <span class="fas fa-code p-3">   Commands</span>
+                  <code class="border-top">
+    cd ~
+    mkdir instanceOne
+    cd instanceOne
+
+    wget https://raw.githubusercontent.com/NearbyShops/Nearby-Shops-API/master/docker-compose.yml
+
+    nano docker-compose.yml
+
+    (Update the port number and container name to ensure that they are unique)
+      </code>
+                </pre>
 
 
-                <p>Remember the email that you assigned as admin email in the configuration file. You will use this email 
-                  to login to the nearby shops app or your own custom app. 
 
-                  <br><br> In case you dont have your own custom app. 
-                  Download Nearby Shops android app from Google Play and Please change your location to Bali, Indonesia. 
-                  Your newly setup market name could be Daily Supplies in Bali, Indonesia. 
+                <pre class="card bg-light align-content-start">
+                  <span class="fas fa-code p-3">   Commands</span>
+                  <code class="border-top">
+    cd ~
+    mkdir instanceTwo
+    cd instanceTwo
 
-                  <br><br>
-                  After login please select your market and you should be able to see Admin Dashboard in Markets screen. 
-                  In case of your custom app you will see admin dashboard in the profile screen. 
-                  In your admin dashboard you will see Market Configuration. Enter that screen. Set all the fields appropriately & save the settings.
+    wget https://raw.githubusercontent.com/NearbyShops/Nearby-Shops-API/master/docker-compose.yml
+
+    nano docker-compose.yml
+
+    (Update the port number and container name to ensure that they are unique)
+      </code>
+                </pre>
+
+                <p>
+                  After updating the docker compose file for each instance. You can proceed with the instructions given in our docker quick installation guide. 
                 </p>
 
-                
-
-                <h2>Follow our tutorials to Learn more !</h2>
 
 
-                <p>To learn more about how to add vendors and use nearby shops. Please follow our tutorials given at this link 
-                  <a href="https://blog.nearbyshops.org/tag/tutorials/">https://blog.nearbyshops.org/tag/tutorials/</a>
+
+
+
+
+                <h2>Backup and Restore your Instance Data</h2>
+
+                <p>
+                  To backup your data in the Docker Instance you can use Docker Commit command. Which commits / saves the container data in an image. 
+                  Then you can use Docker Push Command to push the image to the docker hub. 
                 </p>
+
+
+
+                <pre class="card bg-light align-content-start">
+                  <span class="fas fa-code p-3">   Commands</span>
+                  <code class="border-top">
+    docker commit nbs_api_container your_backup
+    
+    docker push your_backup
+
+    (you must be logged into your docker hub account. If no then login using the following command.)
+    docker login --username=yourhubusername --email=youremail@company.com
+      </code>
+                </pre>
+
+
+
+                <p>
+                  Whenever you want to restore the container from a backup you can simply create a container from the image you saved as your backup. 
+                </p>
+
+
+
+
 
 
 
