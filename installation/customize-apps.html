@@ -122,26 +122,171 @@
           <div class="space-bottom-2">
             <div class="">
 
-              
+
+
+
               <!-- Article -->
               <div class="card shadow-sm p-lg-7 p-4">
+                <h2 >Customize android App</h2>
+                <p class="font-size-2">In this article we will learn how to customize Nearby Shops android apps</p>
 
-                <h2 >Customization of Apps Require Commercial License</h2>
-                  <p class="font-size-2"><a href="https://nearbyshops.org/pricing.html">License Pricing</a></p>
 
-                  <p>Full Customization guide is provided to licensed buyers.</p>
+
+                <h3>Prerequisite Knowledge</h3>
+                  <p>
+                  To understand this guide you dont need to be an expert but basic knowledge of android studio and java will help you.
+                      Even if you dont have this knowledge you can always hire an android developer and ask them to do this for you.
+                      Its is recommended that you learn it which is really easy so that you can update the app yourself. 
+                  </p>
+
+
+
+                  <h3>Connect your app with your Instance</h3>
+                  <p>
+                  To connect the app with your instance. Clone our android app repository. Then open it with latest stable 
+                  release of android studio. And search for file "PrefGeneral.java" in the preferences folder. 
+                  Set multi market mode to false and set default service url equal to your instance domain name.
+                </p>
+
+
+
+
+                  <h3 >Steps for Customization</h3>
+
+                    <p>
+                        1. Change app Package name</br>
+                        2. Change API Server URL and set multi-market mode to false</br>
+                        3. Change brand name and logo</br>
+                        4. Change color scheme</br>
+                        5. Change empty screen graphics (optional)</br>
+                        6. Setup Third Party Integrations</br>
+                        7. Setup website links
+                    </p>
+
+
+
+
+
+                <p class="border-top space-1">Let us begin the step by step guide for how to customize your android apps</p>
+
+
+
+
+
+                  <h2 >Step 1 : Change app Package name</h2>
+
+
+                  <p >
+                      If you want to publish your app on the google play store. You must be aware that each app needs to have a unique package name because on google play store
+                      the app's package name acts as a unique identifier for the app.
+                      </br></br>
+                      To ensure that you have a unique package name we recommend that you purchase a domain name and be an owner of that domain name.
+                      And use that domain name as a package name for your app.
+                      This is not a mandatory step but its a best recommended practice to ensure that your package name remains unique so that
+                      you dont face legal hurdles and issues in future.
+                      </br></br>
+                      Given below are some really good tutorials on how to change your package name and they are good enough to give you an idea
+                      for how you can change your package name.
+                      </br></br>
+
+                      <a href="https://stackoverflow.com/questions/16804093/rename-package-in-android-studio">
+                          https://stackoverflow.com/questions/16804093/rename-package-in-android-studio
+                      </a>
+
+                      </br></br>
+
+                      <a href="https://abhiandroid.com/androidstudio/how-to-change-package-name-android-studio.html">
+                          https://abhiandroid.com/androidstudio/how-to-change-package-name-android-studio.html
+                      </a>
+
+                      </br></br>
+                      You can just see more of such tutorials by typing "change package name android" on any of your favourite search engine.
+                      </br></br>
+
+                      If this is not sufficient and you're still unable to do this step feel free to get in touch with the community at our forum.
+                  </p>
+
+
+
+
+                  <h2 >Step 2 : Connect your app to your Instance</h2>
+
+
+                  <p >
+                      To connect the app with your instance. Search for file "PrefGeneral.java" in the preferences folder. 
+                      Set multi market mode to false and set default service url equal to your instance domain name.                    
+                  </p>
+
+
 
                   
 
-                  <div class="alert alert-warning p-4 mb-5 mt-5" role="alert">
+                  <h2 >Step 3 : Change Brand name and Logo</h2>
 
-                    <h3><span class="fas fa-ambulance font-size-2 mt-1 mr-3"></span>Warning for Commercial Use !</h3>
-                    <p>
-                      Warning ! Commercial Use of our white label app requires commercial license. Commercial use without permission or commercial license will 
-                      be considered copyright violation. 
-                    </p>
-  
-                  </div>
+
+                  <p>
+                      Having your own brand name is good for you also because you get to create your own distinct brand image according to what suits you.
+                      To change your app name and you need to look for strings.xml file in the android app project. This file contains a
+                      string with name "app_name". Here you can put your own app name.
+                      <br><br>
+                      To change your brand logo. save your logo into the drawable folder and then go to manifest.xml file ... look for icon attribute
+                      and change it to point to your own brand logo.
+                      <br><br>
+                      If you face any problem feel free to get in touch with us on our
+                      <a href="http://forum.nearbyshops.org">forum.</a>
+                  </p>
+
+
+
+
+
+
+                  <h2 >Step 4 : Change Color scheme</h2>
+
+
+                  <p>
+                      You can define your own color scheme for the app and choose your colors according to what you like and what suits you the best.
+                      You need to provide three colors. Color primary, color primary dark and color secondary.
+                      These are the theme colors for the android app.
+
+                      You can choose your colors from
+                      <a href="https://www.materialpalette.com/">
+                          https://www.materialpalette.com/
+                      </a>.
+                      This is a very good website which can help you choose your colors for your app.
+                      <br><br>
+                      You can define your custom color scheme in your style.xml file.
+                  </p>
+
+
+
+                  <h2 >Step 5 : Custom graphics and Illustrations</h2>
+
+                  <p>
+                      You can use your own custom graphics and illustrations in your app. Whenever you feel appropriate.
+                  </p>
+
+
+                  
+
+                  <h2 >Step 6: Setup third party integrations</h2>
+
+                  <p>
+                     You might need to setup Push Notifications and Maps by setting API Keys in the android app. The instructions for these integrations 
+                     are provided in the Integrations Section. 
+                  </p>
+
+
+
+                  <h2 >Step 7 : Setup links to website, terms of service and privacy policy</h2>
+
+                  <p>
+                      Google Play requires your app to have a mandatory Terms of Service and Privacy Policy. 
+                      Make sure to put your own custom links.
+                      Search for String.xml and in the file set the value of tos_link and privacy_policy_link to the respective URLs
+                  </p>
+
+
               </div>
               <!-- End Article -->
 
